@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <script
+      src="https://kit.fontawesome.com/7a6c312ccb.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- LUCIDE ICONS -->
+    <!-- Development version -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Production version -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div
+        class="bg-[#172444] flex text-white text-sm px-16 py-3 justify-between"
+      >
+        <div class="flex gap-3 justify-center items-center">
+          <a href="tel:+351258320300" class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-white inline-block"></i>
+            +351 258 320 300
+          </a>
+          <a href="mailto:geral@cls.pt" class="flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-white inline-block"></i>
+            geral@cls.pt
+          </a>
+        </div>
+        <div class="flex gap-3 justify-center items-center">
+          <span>Certified PPE Solutions for professionals</span>
+          <span class="flex gap-2 items-center">
+            <i data-lucide="globe" class="w-4 h-4 text-white inline-block"></i>
+            PT
+            <i
+              data-lucide="chevron-down"
+              class="w-4 h-4 text-white inline-block"
+            ></i>
+          </span>
+          <span class="flex gap-2 items-center">
+            <a href="login.html"  class="flex gap-2 items-center"
+              ><i
+                data-lucide="user"
+                class="w-4 h-4 text-white inline-block"
+              ></i>
+              To Enter</a
+            >
+          </span>
+        </div>
+      </div>
+      <div class="bg-white flex text-sm px-16 py-3 justify-between">
+        <div>
+          <img src="assets/logo on header.png" alt="" />
+        </div>
+        <div class="flex justify-between gap-4">
+          <div class="flex gap-3 justify-between items-center">
+            <a href="#">Products</a>
+            <a href="#">Enterprise</a>
+            <a href="#">Catalogues</a>
+            <a href="#">Technical Info</a>
+            <a href="#">Help</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center gap-4">
+          <input
+            type="search"
+            name=""
+            id=""
+            placeholder="Search Products..."
+            class="px-2 py-2 bg-[#f1f5f9] rounded-md border border-grey-500 w-15"
+          />
+          <i data-lucide="heart" class="w-4 h-4 inline-block"></i>
+          <i data-lucide="shopping-cart" class="w-4 h-4 inline-block"></i>
+          <button class="bg-[#121e37] rounded-md text-white text-sm px-5 py-2">
+            Request Quote
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="relative h-full">
+      <img src="assets/hero.png" alt="" class="w-full h-full object-cover" />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-[#090d15]/[0.95] to-[#132039]/[0.7]"
+      ></div>
+      <div class="absolute inset-0 flex items-center justify-between px-16">
+        <div class="w-[45%] flex flex-col justify-between gap-5">
+          <span
+            class="text-sm px-3 py-1 text-white bg-gray-600 bg-opacity-50 backdrop-blur-sm rounded-full max-content"
+          >
+            Certified Safety Solutions
+          </span>
+          <h1 class="text-white text-5xl font-bold">
+            Professional PPE & Workwear Solutions for Every Industry
+          </h1>
+          <p class="text-white text-sm font-[5rem]">
+            Certified safety gear and workwear designed for comfort,
+            performance, and compliance. Trusted by industrial leaders
+            worldwide.
+          </p>
+          <div class="flex gap-3">
+            <button
+              class="flex gap-3 justify-between items-center bg-red-800 text-white rounded-md text-sm px-3 py-1"
+            >
+              <span> Request a Quote </span>
+              <i data-lucide="arrow-right" class="w-4 h-4 inline-block"></i>
+            </button>
+            <button
+              class="flex gap-3 justify-between items-center bg-white rounded-md text-sm px-4 py-2"
+            >
+              <i data-lucide="download" class="w-4 h-4 inline-block"></i>
+              <span>View Catalogues</span>
+            </button>
+          </div>
+          <div class="text-sm text-white">
+            <ul class="flex gap-4 text-[0.7rem] list-disc list-inside">
+              <li>ISO 9001 Certified</li>
+              <li>EN Standards Complient</li>
+              <li>Global Distribution</li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-[45%]">
+          <img src="assets/user in green.png" alt="" class="rounded-md" />
+        </div>
+      </div>
+      <div
+        class="absolute right-[30%] bottom-[10%] bg-gray-500/50 backdrop-blur-sm p-4 rounded-lg max-w-xs border border-lightgrey-500"
+      >
+        <small class="block text-[0.6rem]">For Wear</small>
+        <h3 class="text-[0.8rem] font-bold mb-1">ONE BRAND, CLS-BRANDS, LDA</h3>
+        <button class="underline text-[0.7rem] font-semibold">Know More</button>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
