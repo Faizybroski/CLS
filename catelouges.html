@@ -30,13 +30,11 @@
         padding: 0;
         box-sizing: border-box;
       }
-
       ::-webkit-scrollbar {
         display: none;
       }
     </style>
   </head>
-
   <body>
     <div
       class="bg-[radial-gradient(circle_at_top_center,#1E2E4E,#101B32)] text-white text-sm"
@@ -210,7 +208,8 @@
           </span>
 
           <h1 class="text-3xl md:text-5xl lg:text-5xl font-bold leading-tight">
-            Technical Information
+            Enterprise - <br />
+            News
           </h1>
         </div>
       </div>
@@ -220,127 +219,188 @@
         <p class="text-sm">
           <a href="index.html" class="text-gray-500">Home</a>
           /
-          <a href="technical-information-rules.html">Technical Information</a>
+          <a href="enterprise-news.html">Enterprise - News</a>
         </p>
       </div>
-      <div class="text-center p-10 w-[75%] m-auto">
-        <h1 class="text-5xl font-bold p-5">Technical Information</h1>
-        <div class="text-sm text-gray-500 leading-6">
-          <p>
-            Technical information is a group of information that allows the
-            identification of the attributes of a given product or the
-            specification of the execution of processes.
-          </p>
+      <div class="px-10 pt-10 w-[75%] m-auto">
+        <h1 class="text-4xl font-bold p-5 text-center">Featured Catalogs</h1>
+        <div class="text-sm text-gray-500 leading-6 text-center">
+          <p>Download our latest comprehensive catalogs</p>
         </div>
-        <div class="py-16 w-[90%] m-auto">
-          <h1 class="text-2xl font-bold p-5 text-red-600">
-            Product Categories
-          </h1>
-          <div class="text-sm text-gray-500 leading-6">
-            <p>
-              Learn more about the various standards by clicking on them. This
-              will open a pop-up with more information.
-            </p>
-          </div>
-        </div>
-        <div class="w-[80%] m-auto">
+        <div class="flex m-14 gap-10">
           <div
-            class="flex items-center divide-x divide-gray-300 divide-[2px] py-6 text-gray-600"
+            class="flex flex-col gap-3 p-5 rounded-md border border-gray-200 w-max"
           >
-            <!-- Item 1 -->
-            <div class="flex gap-3 items-center px-6">
-              <i data-lucide="footprints" class="w-4 h-4"></i>
-              <h2 class="text-sm">Safety Footwear</h2>
+            <div>
+              <img
+                src="Images/featured-catalogues/Paragraph+Background.png"
+                alt=""
+                class="block"
+              />
             </div>
 
-            <!-- Item 2 -->
-            <div class="flex gap-3 items-center px-6">
-              <i data-lucide="hand" class="w-4 h-4"></i>
-              <h2 class="text-sm">Safety Gloves</h2>
+            <div class="flex font-bold items-end gap-1 flex-wrap">
+              <h2 class="">CLS General Catalog</h2>
+              <span class="text-[6px]">2024/2025</span>
             </div>
 
-            <!-- Item 3 -->
-            <div class="flex gap-3 items-center px-6">
-              <i data-lucide="eye" class="w-4 h-4"></i>
-              <h2 class="text-sm">Eye & Face Protection</h2>
+            <p class="text-[10px]">
+              Complete Catalog featuring all our brands and products
+            </p>
+
+            <div class="flex gap-3 flex-wrap">
+              <button
+                class="flex flex-1 items-center justify-center px-5 gap-2 bg-[#0664e0] text-white rounded-md"
+              >
+                <i data-lucide="download" class="w-3 h-3"></i> Download PDF
+              </button>
+              <button class="p-2 rounded-lg border">
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-3 p-5 rounded-md border border-gray-200 w-max"
+          >
+            <!-- Image -->
+            <div>
+              <img
+                src="Images/featured-catalogues/Paragraph+Background (1).png"
+                alt=""
+                class="block"
+              />
+            </div>
+
+            <!-- Title + year -->
+            <div class="flex font-bold items-end gap-1 flex-wrap">
+              <h2 class="">CLS ES (SPAIN) Catalog</h2>
+              <span class="text-[6px]">2024/2025</span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-[10px]">Specialized Catalog for Spanish market</p>
+
+            <!-- Buttons -->
+            <div class="flex gap-3 flex-wrap">
+              <button
+                class="flex flex-1 items-center justify-center px-5 gap-2 bg-[#0664e0] text-white rounded-md"
+              >
+                <i data-lucide="download" class="w-3 h-3"></i> Download PDF
+              </button>
+              <button class="p-2 rounded-lg border">
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div class="shadow-lg p-5 rounded-md border">
-        <div class="flex items-center space-x-4 leading-[2px]">
-          <div class="p-3 bg-[#101b32] rounded-lg">
-            <i data-lucide="footprints" class="w-6 h-6 text-white"></i>
-          </div>
-          <div>
-            <h1 class="text-2xl font-bold">Safety Footwear</h1>
-            <p class="text-gray-500 text-sm">
-              Technical specifications and prouct types
-            </p>
-          </div>
+
+      <div class="m-auto">
+        <h1 class="text-3xl font-bold m-5 text-center">Other Brand Catalogs</h1>
+        <div class="text-sm text-gray-500 m-5 leading-6 text-center">
+          <p>Quality, Diversity and excellence!</p>
         </div>
-        <div class="my-3">
-          <h3 class="text-md font-bold py-3">Technical Details</h3>
-          <div class="text-sm">
-            <p class="flex justify-between border-b py-3">
-              <span>Technologies</span
-              ><i data-lucide="chevron-down" class="w-4 h-4 text-black"></i>
-            </p>
-            <p class="flex justify-between border-b py-3">
-              <span>Pictograms</span
-              ><i data-lucide="chevron-down" class="w-4 h-4 text-black"></i>
-            </p>
-            <p class="flex justify-between border-b py-3">
-              <span>Safety Categories</span
-              ><i data-lucide="chevron-down" class="w-4 h-4 text-black"></i>
-            </p>
-          </div>
+        <div class="text-sm text-gray-500 leading-6 text-center">
+          <input
+            type="text"
+            class="border px-10 py-2 rounded-md text-sm placeholder:text-md"
+            placeholder="Search brands..."
+          />
         </div>
-        <div class="my-3">
-          <h3 class="text-md font-bold py-3">Product Types</h3>
-          <div class="text-sm grid grid-cols-3 gap-3">
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">
-              Glass-Fiber Footwear
+
+        <div class="flex my-14 gap-2 flex-wrap">
+          <div class="flex flex-col gap-2 rounded-md w-max">
+            <div>
+              <img
+                src="Images/other-catalogs/Rectangle 19306.png"
+                alt=""
+                class="block w-44 h-auto"
+              />
             </div>
-            <div
-              class="bg-[#f9fafb] p-3 rounded-lg border border-gray-200 border-[1.2px]"
-            >
-              Steel Footwear
+            <div class="flex flex-col items-center gap-1 flex-wrap">
+              <h2 class="font-bold text-sm">ABOUTBLU CATALOG</h2>
+              <span class="text-[6px]"><u>VIEW CATALOG</u></span>
             </div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">HRO Footwear</div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">
-              PVC, PU and EVA Footwear
+          </div>
+          <div class="flex flex-col gap-2 rounded-md w-max">
+            <div>
+              <img
+                src="Images/other-catalogs/Rectangle 19306 (1).png"
+                alt=""
+                class="block w-44 h-auto"
+              />
             </div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">
-              Military / Surveillance Footwear
+            <div class="flex flex-col items-center gap-1 flex-wrap">
+              <h2 class="font-bold text-sm">ABOUTBLU CATALOG</h2>
+              <span class="text-[6px]"><u>VIEW CATALOG</u></span>
             </div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">
-              Aluminium Footwear
+          </div>
+          <div class="flex flex-col gap-2 rounded-md w-max">
+            <div>
+              <img
+                src="Images/other-catalogs/Rectangle 19306 (2).png"
+                alt=""
+                class="block w-44 h-auto"
+              />
             </div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">
-              Carbon Fiber Footwear
+            <div class="flex flex-col items-center gap-1 flex-wrap">
+              <h2 class="font-bold text-sm">ABOUTBLU CATALOG</h2>
+              <span class="text-[6px]"><u>VIEW CATALOG</u></span>
             </div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">ESD Footwear</div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">
-              Occupational Footwear
+          </div>
+          <div class="flex flex-col gap-2 rounded-md w-max">
+            <div>
+              <img
+                src="Images/other-catalogs/Rectangle 19306 (3).png"
+                alt=""
+                class="block w-44 h-auto"
+              />
             </div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">
-              Footwear Accessories
+            <div class="flex flex-col items-center gap-1 flex-wrap">
+              <h2 class="font-bold text-sm">ABOUTBLU CATALOG</h2>
+              <span class="text-[6px]"><u>VIEW CATALOG</u></span>
             </div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">
-              Composite Footwear
+          </div>
+          <div class="flex flex-col gap-2 rounded-md w-max">
+            <div>
+              <img
+                src="Images/other-catalogs/Rectangle 19306 (4).png"
+                alt=""
+                class="block w-44 h-auto"
+              />
             </div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">
-              Metal Free Footwear
+            <div class="flex flex-col items-center gap-1 flex-wrap">
+              <h2 class="font-bold text-sm">ABOUTBLU CATALOG</h2>
+              <span class="text-[6px]"><u>VIEW CATALOG</u></span>
             </div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">White Footwear</div>
-            <div class="bg-[#f9fafb] p-3 rounded-lg border">
-              Ladies Footwear
+          </div>
+          <div class="flex flex-col gap-2 rounded-md w-max">
+            <div>
+              <img
+                src="Images/other-catalogs/Rectangle 19306 (5).png"
+                alt=""
+                class="block w-44 h-auto"
+              />
+            </div>
+            <div class="flex flex-col items-center gap-1 flex-wrap">
+              <h2 class="font-bold text-sm">ABOUTBLU CATALOG</h2>
+              <span class="text-[6px]"><u>VIEW CATALOG</u></span>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section
+      class="container relative mx-auto px-5 py-12 flex flex-col justify-center items-center"
+    >
+      <img
+        src="Images/Home Images/1224cb47f61299d8d7071664630346a35295e076.png"
+        alt=""
+        class="shadow-lg"
+      />
+    </section>
+
     <section class="px-20 py-8">
       <div class="text-center p-10 w-[75%] m-auto">
         <h1 class="text-5xl font-bold p-5">Trusted Brands</h1>
@@ -364,107 +424,11 @@
         />
       </div>
     </section>
-    <!-- <section class="px-20 pb-8"> -->
+
     <section class="w-full py-16">
       <div class="text-center pb-10 w-[75%] m-auto">
         <h1 class="text-5xl font-bold p-5">How it works</h1>
       </div>
-
-      <!-- <div class="flex gap-3 items-center">
-        <div
-          class="relative flex flex-col p-5 justify-evenly items-center text-center text-white rounded-2xl h-60 w-64 shadow-xl overflow-hidden"
-        >
-          <div
-            class="absolute top-0 right-0 w-40 h-40 rounded-full bg-white opacity-20 blur-3xl pointer-events-none"
-          ></div>
-
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-[#2b507f] via-[#1e2e4e] to-[#151f3c] opacity-90"
-          ></div>
-
-          <div
-            class="relative z-10 flex flex-col items-center justify-between h-full"
-          >
-            <img src="Images/how-it-works/Group 1686551583.png" alt="" />
-            <h2 class="text-lg font-bold">1ST - CHOOSE</h2>
-            <p class="text-sm">
-              Choose all your Products and add them to your Quote Cart.
-            </p>
-          </div>
-        </div>
-
-        <i data-lucide="arrow-right" class="w-16 h-16 text-[#1e2e4e]"></i>
-
-        <div
-          class="relative flex flex-col p-5 justify-evenly items-center text-center text-white rounded-2xl h-60 w-64 shadow-xl overflow-hidden"
-        >
-          <div
-            class="absolute top-0 right-0 w-40 h-40 rounded-full bg-white opacity-20 blur-3xl pointer-events-none"
-          ></div>
-
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-[#2b507f] via-[#1e2e4e] to-[#151f3c] opacity-90"
-          ></div>
-
-          <div
-            class="relative z-10 flex flex-col items-center justify-between h-full"
-          >
-            <img src="Images/how-it-works/Layer 2.png" alt="" />
-            <h2 class="text-lg font-bold">2ND - REQUEST</h2>
-            <p class="text-sm">Place your order in the Budget Cart.</p>
-          </div>
-        </div>
-
-        <i data-lucide="arrow-right" class="w-16 h-16 text-[#1e2e4e]"></i>
-
-        <div
-          class="relative flex flex-col p-5 justify-evenly items-center text-center text-white rounded-2xl h-60 w-64 shadow-xl overflow-hidden"
-        >
-          <div
-            class="absolute top-0 right-0 w-40 h-40 rounded-full bg-white opacity-20 blur-3xl pointer-events-none"
-          ></div>
-
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-[#2b507f] via-[#1e2e4e] to-[#151f3c] opacity-90"
-          ></div>
-
-          <div
-            class="relative z-10 flex flex-col items-center justify-between h-full"
-          >
-            <img src="Images/how-it-works/Group.png" alt="" />
-            <h2 class="text-lg font-bold">3RD - ANALYSIS</h2>
-            <p class="text-sm">
-              our Team will analyze the Budget Request and Respond with the
-              Quotes.
-            </p>
-          </div>
-        </div>
-
-        <i data-lucide="arrow-right" class="w-16 h-16 text-[#1e2e4e]"></i>
-
-        <div
-          class="relative flex flex-col p-5 justify-evenly items-center text-center text-white rounded-2xl h-60 w-64 shadow-xl overflow-hidden"
-        >
-          <div
-            class="absolute top-0 right-0 w-40 h-40 rounded-full bg-white opacity-20 blur-3xl pointer-events-none"
-          ></div>
-
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-[#2b507f] via-[#1e2e4e] to-[#151f3c] opacity-90"
-          ></div>
-
-          <div
-            class="relative z-10 flex flex-col items-center justify-between h-full"
-          >
-            <img src="Images/how-it-works/Group 1686551582.png" alt="" />
-            <h2 class="text-lg font-bold">4TH - CONVERSION</h2>
-            <p class="text-sm">
-              After the Budget is Validated by the Customer, we convert it into
-              an Order!
-            </p>
-          </div>
-        </div>
-      </div> -->
       <div
         class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 flex-wrap"
       >
@@ -953,68 +917,6 @@
         </div>
       </div>
     </section>
-
-    <section class="relative w-full overflow-hidden">
-      <div class="flex w-full">
-        <!-- Image 1 (larger width) -->
-        <div class="flex-[1]">
-          <img
-            src="./Images/instagram/Rectangle 19288.png"
-            class="w-full h-full object-contain"
-            alt=""
-          />
-        </div>
-
-        <!-- Middle images -->
-        <div class="flex-[1]">
-          <img
-            src="./Images/instagram/Rectangle 19289.png"
-            class="w-full h-full object-contain"
-            alt=""
-          />
-        </div>
-        <div class="flex-[1]">
-          <img
-            src="./Images/instagram/Rectangle 19290.png"
-            class="w-full h-full object-contain"
-            alt=""
-          />
-        </div>
-        <div class="flex-[1]">
-          <img
-            src="./Images/instagram/Rectangle 19291.png"
-            class="w-full h-full object-contain"
-            alt=""
-          />
-        </div>
-
-        <!-- Last image (larger width) -->
-        <div class="flex-[1]">
-          <img
-            src="./Images/instagram/Rectangle 19292.png"
-            class="w-full h-full object-contain"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <!-- White overlay -->
-      <div class="absolute inset-0 bg-white/75"></div>
-
-      <!-- Center content -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="flex items-center gap-3">
-          <img
-            src="Images/instagram/Vector.png"
-            alt="Instagram"
-            class="w-16 h-16"
-          />
-          <h1 class="text-4xl font-bold tracking-wide text-[#101b32]">
-            Join Us On Instagram
-          </h1>
-        </div>
-      </div>
-    </section>
     <section class="px-20 py-8 flex justify-between">
       <div
         class="flex border rounded-md shadow-lg px-5 py-3 gap-2 justify-center items-center"
@@ -1325,6 +1227,55 @@
     </footer>
 
     <script>
+      let rules = [
+        {
+          title: "Notice: Change in Logistics Procedures",
+          desc: "As part of the modernization & automation process that CLS is undergoing, we will be required to change certain logistical procedures, which in an initial adaptation phase will have some impact...",
+          num: "31 Oct",
+        },
+        {
+          title:
+            "FOR WALK &reg;, a CLS Brands brand, posts average turnover growth pf 5 million euros and boosts the Company",
+          desc: "CLS Brands, Ltd., leader in PPE and safety apparel, is excited to announce the significant progress in developing its new inst...",
+          num: "25 Aug",
+        },
+        {
+          title:
+            "5 Reasons to Have CLS Brands — Vending &reg; PPE Vending Machines",
+          desc: "Optimize PPE delivery in your company. Safety and protection of workers are essential aspects in any business ...",
+          num: "05 Jun",
+        },
+        {
+          title:
+            "Launch of new clothing brand FORWEAR &reg; — Protective Workwear by CLS Brands, Ltd.",
+          desc: "CLS Brands, Ltd. is excited to announce the launch of its new clothing brand, FORWEAR &reg; — Protective Workwear. With this launch, the company aims to unify its clothing line ...",
+          num: "01 Jun",
+        },
+      ];
+
+      const container = document.getElementById("rules-container");
+      container.innerHTML = rules
+        .map((r, index) => {
+          return `
+              <div class="relative rounded-lg overflow-hidden flex flex-col h-full">
+              <div class="absolute inset-0 bg-[url('./Images/news-bg/b118c9cbf94d4315c105981af1e9c53dcd82e5cd.png')] bg-cover bg-center"></div>
+              <div class="absolute inset-0 bg-white/70"></div>
+              <div class="relative flex flex-col flex-1 p-6 justify-between">
+                <div>
+                  <span class="flex gap-3 items-center">
+                    <i data-lucide="calendar" class="w-4 h-4 text-black"></i>${r.num}
+                  </span>
+                  <h1 class="text-md font-bold text-[#1e2e4e] mt-2">${r.title}</h1>
+                  <p class="text-gray-500 text-sm mt-2">${r.desc}</p>
+                </div>
+                <button class="flex items-center gap-5 text-sm text-black mt-4">
+                  Read more <i data-lucide="arrow-right" class="w-4 h-4 text-black"></i>
+                </button>
+              </div>
+            </div>
+          `;
+        })
+        .join("");
       lucide.createIcons();
     </script>
   </body>

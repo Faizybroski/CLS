@@ -171,7 +171,9 @@
       <div id="mobile-menu" class="hidden bg-gray-100 text-gray-800 lg:hidden">
         <a href="#" class="block px-6 py-2 hover:bg-gray-200">Products</a>
         <a href="#" class="block px-6 py-2 hover:bg-gray-200">Enterprise</a>
-        <a href="catelouges.html" class="block px-6 py-2 hover:bg-gray-200">Catalogues</a>
+        <a href="catelouges.html" class="block px-6 py-2 hover:bg-gray-200"
+          >Catalogues</a
+        >
         <a href="#" class="block px-6 py-2 hover:bg-gray-200">Technical Info</a>
         <a href="#" class="block px-6 py-2 hover:bg-gray-200">Help</a>
         <div class="border-t border-gray-300 my-2"></div>
@@ -208,8 +210,7 @@
           </span>
 
           <h1 class="text-3xl md:text-5xl lg:text-5xl font-bold leading-tight">
-            Technical Information - <br />
-            Rules
+            Our Catalogues
           </h1>
         </div>
       </div>
@@ -219,39 +220,56 @@
         <p class="text-sm">
           <a href="index.html" class="text-gray-500">Home</a>
           /
-          <a href="technical-information-rules.html"
-            >Technical Information - Rules</a
-          >
+          <a href="catelouges.html">Our Catalogue</a>
         </p>
       </div>
-      <div class="text-center p-10 w-[75%] m-auto">
-        <h1 class="text-5xl font-bold p-5">Rules</h1>
-        <div class="text-sm text-gray-500 leading-6">
-          <p>
-            We care about you and want you to have the best products certified
-            according to European Standards, so that you are always protected
-            with complete security.
-          </p>
-          <p>
-            Find out in this section about the rules that cover each category.
-          </p>
-        </div>
-        <div class="py-16 w-[90%] m-auto">
-          <h1 class="text-2xl font-bold p-5 text-red-600">
-            All the information about the various categories!
-          </h1>
-          <div class="text-sm text-gray-500 leading-6">
-            <p>
-              Learn more about the various standards by clicking on them. This
-              will open a pop-up with more information. Click on the standard
-              category you want to explore.
-            </p>
+      <div class="text-center py-10 m-auto">
+        <div class="flex justify-between">
+          <div>
+            <input
+              type="text"
+              class="border px-10 py-2 rounded-md text-sm placeholder:text-md"
+              placeholder="Search news..."
+            />
+          </div>
+          <div class="flex gap-2 text-sm">
+            <button class="bg-[#0b1a36] text-white border rounded-md px-3">
+              All
+            </button>
+            <button class="bg-[#fafafa] border rounded-md px-3">
+              Sustainability
+            </button>
+            <button class="bg-[#fafafa] border rounded-md px-3">
+              Company Updates
+            </button>
+            <button class="bg-[#fafafa] border rounded-md px-3">
+              Product Launches
+            </button>
           </div>
         </div>
       </div>
       <div
+        class="p-5 border border-gray-200 border-[1.5px] rounded-lg flex flex-col gap-3"
+      >
+        <span class="flex gap-3 items-center"
+          ><i data-lucide="calendar" class="w-4 h-4 text-black"></i> 25
+          Jan</span
+        >
+        <h1 class="text-2xl font-bold text-[#1e2e4e]">
+          CLS Brands, Ltd. achieves PME Leader 2023 status
+        </h1>
+        <p class="text-sm">
+          It is with great pride that we announce that CLS Brands, Ltd. has been
+          distinguished with the prestigious 'PME Leader 2023 status, awarded by
+          IAPME...
+        </p>
+        <button class="flex items-center gap-5 text-sm">
+          Read more <i data-lucide="arrow-right" class="w-4 h-4 text-black"></i>
+        </button>
+      </div>
+      <div
         id="rules-container"
-        class="grid grid-cols-1 sm:grid-cols-2 gap-5"
+        class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10"
       ></div>
     </section>
 
@@ -628,102 +646,49 @@
     <script>
       let rules = [
         {
-          title: "Safety Footwear",
-          desc: "European standard related to safety footwear",
-          num: 10,
-          icon: "shield-check",
+          title: "Notice: Change in Logistics Procedures",
+          desc: "As part of the modernization & automation process that CLS is undergoing, we will be required to change certain logistical procedures, which in an initial adaptation phase will have some impact...",
+          num: "31 Oct",
         },
         {
-          title: "Safety Gloves",
-          desc: "Standards for gloves protecting hands against mechanical, thermal, chemical, cut, etc. risks",
-          num: 17,
-          icon: "hand",
+          title:
+            "FOR WALK &reg;, a CLS Brands brand, posts average turnover growth pf 5 million euros and boosts the Company",
+          desc: "CLS Brands, Ltd., leader in PPE and safety apparel, is excited to announce the significant progress in developing its new inst...",
+          num: "25 Aug",
         },
         {
-          title: "Rspiratory Protection",
-          desc: "Standards for masks, filters, breathing apparatus in contaminated air environments",
-          num: 9,
-          icon: "wind",
+          title:
+            "5 Reasons to Have CLS Brands — Vending &reg; PPE Vending Machines",
+          desc: "Optimize PPE delivery in your company. Safety and protection of workers are essential aspects in any business ...",
+          num: "05 Jun",
         },
         {
-          title: "Eye And Face Protection",
-          desc: "Standards related to eye and face protection (glasses, visors etc.)",
-          num: 10,
-          icon: "eye",
-        },
-        {
-          title: "Hearing Protection",
-          desc: "Standards for ear defenders, earplugs",
-          num: 5,
-          icon: "ear",
-        },
-        {
-          title: "Head Protection",
-          desc: "Standards for helmets and head gear",
-          num: 5,
-          icon: "hard-hat",
-        },
-        {
-          title: "Fall-Protection",
-          desc: "Standards for fall arrst systems, harness, connectors etc.",
-          num: 14,
-          icon: "anchor",
-        },
-        {
-          title: "Body Protection",
-          desc: "Standards for protective clothing",
-          num: 23,
-          icon: "shirt",
-        },
-        {
-          title: "Disposables",
-          desc: "Standards applicable to disposable protective products and, disposable work wear",
-          num: 17,
-          icon: "trash-2",
-        },
-        {
-          title: "Signage",
-          desc: "Standards for signage in safety & emergency contexts",
-          num: 2,
-          icon: "triangle-alert",
-        },
-        {
-          title: "Miscellaneous",
-          desc: "Standards covering various articles related to health, load, lifting, etc.",
-          num: 6,
-          icon: "package",
+          title:
+            "Launch of new clothing brand FORWEAR &reg; — Protective Workwear by CLS Brands, Ltd.",
+          desc: "CLS Brands, Ltd. is excited to announce the launch of its new clothing brand, FORWEAR &reg; — Protective Workwear. With this launch, the company aims to unify its clothing line ...",
+          num: "01 Jun",
         },
       ];
 
       const container = document.getElementById("rules-container");
       container.innerHTML = rules
         .map((r, index) => {
-          const isLastAndOdd =
-            rules.length % 2 !== 0 && index === rules.length - 1;
-
-          const wrapperClass = isLastAndOdd
-            ? "border border-gray-200 border-[1.5px] rounded-2xl p-6 col-span-2 mx-auto w-full sm:w-1/2"
-            : "border border-gray-200 border-[1.5px] rounded-2xl p-6";
-
           return `
-            <div class="${wrapperClass}">
-              <div class="flex items-center space-x-4 leading-[2px]">
-                <div class="p-3 bg-gray-200 rounded-lg">
-                  <i data-lucide="${r.icon}" class="w-6 h-6 text-black"></i>
-                </div>
-
+              <div class="relative rounded-lg overflow-hidden flex flex-col h-full">
+              <div class="absolute inset-0 bg-[url('./Images/news-bg/b118c9cbf94d4315c105981af1e9c53dcd82e5cd.png')] bg-cover bg-center"></div>
+              <div class="absolute inset-0 bg-white/70"></div>
+              <div class="relative flex flex-col flex-1 p-6 justify-between">
                 <div>
-                  <h1 class="text-2xl font-bold">${r.title}</h1>
-                  <p class="text-gray-500 text-sm">${r.desc}</p>
+                  <span class="flex gap-3 items-center">
+                    <i data-lucide="calendar" class="w-4 h-4 text-black"></i>${r.num}
+                  </span>
+                  <h1 class="text-md font-bold text-[#1e2e4e] mt-2">${r.title}</h1>
+                  <p class="text-gray-500 text-sm mt-2">${r.desc}</p>
                 </div>
+                <button class="flex items-center gap-5 text-sm text-black mt-4">
+                  Read more <i data-lucide="arrow-right" class="w-4 h-4 text-black"></i>
+                </button>
               </div>
-
-              <p class="text-md flex items-center justify-between mt-4">
-                <span>View ${r.num} European Standards</span>
-                <span>
-                  <i data-lucide="chevron-down" class="w-4 h-4 text-black"></i>
-                </span>
-              </p>
             </div>
           `;
         })
