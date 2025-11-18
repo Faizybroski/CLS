@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js"
+      defer
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Top Bar -->
+    <div
+      class="bg-[radial-gradient(circle_at_top_center,#1E2E4E,#101B32)] text-white text-sm"
+    >
+      <div
+        class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 py-2 gap-2"
+      >
+        <!-- Left -->
+        <div
+          class="flex flex-wrap items-center justify-center md:justify-start space-x-4"
+        >
+          <span><i class="fa-solid fa-phone mr-2"></i>+351 258 320 300</span>
+          <span><i class="fa-regular fa-envelope mr-2"></i>geral@cls.pt</span>
+        </div>
+
+        <!-- Right -->
+        <div
+          class="flex flex-wrap items-center justify-center md:justify-end space-x-4"
+        >
+          <span class="hidden sm:block"
+            >Certified PPE solutions for professionals</span
+          >
+
+          <!-- Language Dropdown -->
+          <div class="relative">
+            <button
+              id="lang-btn"
+              class="flex items-center space-x-1 hover:text-indigo-400 focus:outline-none"
+            >
+              <i class="fa-solid fa-globe"></i>
+              <span>PT</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+            <div
+              id="lang-menu"
+              class="hidden absolute right-0 mt-2 w-36 rounded-md bg-white text-gray-800 shadow-md ring-1 ring-black/5 z-50"
+            >
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-indigo-100"
+                >PT - Português</a
+              >
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-indigo-100"
+                >EN - English</a
+              >
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-indigo-100"
+                >ES - Español</a
+              >
+            </div>
+          </div>
+
+          <!-- Login -->
+          <a href="login.html" class="flex items-center hover:text-indigo-400">
+            <i class="fa-regular fa-user mr-1"></i> To Enter
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center">
+          <img
+            src="Images/Logo/Cls Logo.png"
+            alt="CLS Logo"
+            class="h-10 w-auto"
+          />
+        </a>
+
+        <!-- Nav Links -->
+        <nav
+          class="hidden lg:flex items-center space-x-8 font-medium text-gray-700"
+        >
+          <a href="#" class="hover:text-indigo-600">Products</a>
+          <a href="#" class="hover:text-indigo-600">Enterprise</a>
+          <a href="#" class="hover:text-indigo-600">Catalogues</a>
+          <a href="#" class="hover:text-indigo-600">Technical Info</a>
+          <a href="#" class="hover:text-indigo-600">Help</a>
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="hidden lg:flex items-center space-x-4">
+          <!-- Search -->
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search products..."
+              class="w-56 border rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass absolute right-3 top-2 text-gray-400"
+            ></i>
+          </div>
+
+          <!-- Wishlist -->
+          <button class="relative text-gray-600 hover:text-indigo-600">
+            <i class="fa-regular fa-heart text-xl"></i>
+            <span
+              class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold rounded-full w-4 h-4 flex items-center justify-center"
+              >2</span
+            >
+          </button>
+
+          <!-- Cart -->
+          <button class="relative text-gray-600 hover:text-indigo-600">
+            <i class="fa-solid fa-cart-shopping text-xl"></i>
+            <span
+              class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold rounded-full w-4 h-4 flex items-center justify-center"
+              >2</span
+            >
+          </button>
+
+          <!-- Request Quote -->
+          <a
+            href="#"
+            class="bg-[#1E2E4E] hover:bg-[#243a63] text-white text-sm font-semibold px-4 py-2 rounded-md"
+          >
+            Request Quote
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button
+          id="menu-btn"
+          class="lg:hidden text-gray-700 focus:outline-none"
+        >
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden bg-gray-100 text-gray-800 lg:hidden">
+        <a href="#" class="block px-6 py-2 hover:bg-gray-200">Products</a>
+        <a href="#" class="block px-6 py-2 hover:bg-gray-200">Enterprise</a>
+        <a href="#" class="block px-6 py-2 hover:bg-gray-200">Catalogues</a>
+        <a href="#" class="block px-6 py-2 hover:bg-gray-200">Technical Info</a>
+        <a href="#" class="block px-6 py-2 hover:bg-gray-200">Help</a>
+        <div class="border-t border-gray-300 my-2"></div>
+        <div class="px-6 py-3 space-y-2">
+          <input
+            type="text"
+            placeholder="Search products..."
+            class="w-full border rounded-md px-3 py-2 text-sm"
+          />
+          <a href="#" class="block text-indigo-600 font-semibold"
+            >Request Quote</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-white overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="Images/Home Images/hero-image.png"
+          alt="Construction background"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-[#132039B2]/90"></div>
+      </div>
+
+      <div
+        class="relative container mx-auto px-6 py-12 lg:py-6 flex flex-col items-center gap-12"
+      >
+        <div class="text-white text-center">
+          <span
+            class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block"
+          >
+            All Products
+          </span>
+
+          <h1 class="text-3xl md:text-5xl lg:text-5xl font-bold leading-tight">
+            Professional PPE & Workwear <br class="hidden md:block" />
+            Solutions for Every Industry
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="flex-col lg:flex-row container mx-auto min-h-screen justify-center items-center p-6"
+    >
+      <div class="w-full lg:w-auto mr-3">
+        <!-- Breadcrumbs -->
+        <nav class="text-md text-gray-500 mb-4">
+          <a href="/" class="hover:text-gray-700">Home</a> /
+          <a href="/products" class="hover:text-gray-700">Products</a> /
+          <span class="text-gray-700">All Products</span>
+        </nav>
+      </div>
+      <div
+        class="flex lg:flex-row container mx-auto min-h-screen justify-center items-center gap-8"
+      >
+        <!-- Sidebar -->
+        <aside
+          class="w-full lg:w-72 bg-white shadow-[-2px_4px_20px_0px_#00000040] rounded-lg px-8 py-8"
+        >
+          <ul>
+            <li>
+              <h3
+                class="w-full text-left px-5 py-2 mb-3 bg-gradient-to-b from-[#1A2238] to-[#0B1320] text-white font-semibold rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.25)]"
+              >
+                All Categories
+              </h3>
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Safety Footwear</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Protective Gloves</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Eye & Face Protection</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Respiratory Protection</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Hearing Protection</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Head Protection</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Safety Clothing</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Fall Protection</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Other Products</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Signposting</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+                >Disposables</a
+              >
+            </li>
+          </ul>
+
+          <!-- Filters Header -->
+          <h3
+            class="w-full text-left px-5 py-3 mt-6 mb-5 bg-gradient-to-b from-[#1A2238] to-[#0B1320] text-white font-semibold rounded-lg shadow"
+          >
+            Filters
+          </h3>
+
+          <!-- Wrapper for all filter blocks -->
+          <div class="space-y-6">
+            <!-- Categories -->
+            <div x-data="{ open: true }">
+              <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center font-semibold text-gray-700 mb-2"
+              >
+                <span>Categories</span>
+                <span x-text="open ? '−' : '+'"></span>
+              </button>
+
+              <div
+                x-show="open"
+                class="max-h-52 overflow-y-auto pr-2 space-y-3"
+              >
+                <!-- Category item -->
+                <div
+                  class="flex items-center space-x-3 cursor-pointer hover:bg-gray-100 p-2 rounded"
+                >
+                  <img src="Images/Products/1.png" class="w-6 h-6" alt="" />
+                  <span>Safety Clothing</span>
+                </div>
+
+                <div
+                  class="flex items-center space-x-3 cursor-pointer hover:bg-gray-100 p-2 rounded"
+                >
+                  <img src="Images/Products/2.png" class="w-6 h-6" alt="" />
+                  <span>Protective Footwear</span>
+                </div>
+
+                <div
+                  class="flex items-center space-x-3 cursor-pointer hover:bg-gray-100 p-2 rounded"
+                >
+                  <img src="Images/Products/3.png" class="w-6 h-6" alt="" />
+                  <span>Disposables</span>
+                </div>
+
+                <div
+                  class="flex items-center space-x-3 cursor-pointer hover:bg-gray-100 p-2 rounded"
+                >
+                  <img src="Images/Products/4.png" class="w-6 h-6" alt="" />
+                  <span>Fall Protection</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Brands -->
+            <div x-data="{ open: true }">
+              <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center font-semibold text-gray-700 mb-2"
+              >
+                <span>Brands</span>
+                <span x-text="open ? '−' : '+'"></span>
+              </button>
+
+              <div
+                x-show="open"
+                class="max-h-52 overflow-y-auto pr-2 space-y-3"
+              >
+                <label class="flex items-center space-x-2">
+                  <input type="radio" name="brand" class="accent-[#1A2238]" />
+                  <span>ABOUT BLU</span>
+                </label>
+
+                <label class="flex items-center space-x-2">
+                  <input type="radio" name="brand" class="accent-[#1A2238]" />
+                  <span>ACTIVE GEAR</span>
+                </label>
+
+                <label class="flex items-center space-x-2">
+                  <input type="radio" name="brand" class="accent-[#1A2238]" />
+                  <span>ALBATROS</span>
+                </label>
+
+                <label class="flex items-center space-x-2">
+                  <input type="radio" name="brand" class="accent-[#1A2238]" />
+                  <span>BEKINA</span>
+                </label>
+
+                <label class="flex items-center space-x-2">
+                  <input type="radio" name="brand" class="accent-[#1A2238]" />
+                  <span>BLS</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Materials -->
+            <div x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center font-semibold text-gray-700"
+              >
+                <span>Materials</span>
+                <span x-text="open ? '−' : '+'"></span>
+              </button>
+
+              <div
+                x-show="open"
+                class="max-h-48 overflow-y-auto pr-2 space-y-2 mt-2"
+              >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Oil & Gas</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Construction</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Chemical</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Food Processing</label
+                >
+              </div>
+            </div>
+
+            <!-- Size -->
+            <div x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center font-semibold text-gray-700"
+              >
+                <span>Size</span>
+                <span x-text="open ? '−' : '+'"></span>
+              </button>
+
+              <div
+                x-show="open"
+                class="max-h-48 overflow-y-auto pr-2 space-y-2 mt-2"
+              >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Oil & Gas</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Construction</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Chemical</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Food Processing</label
+                >
+              </div>
+            </div>
+
+            <!-- Color -->
+            <div x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center font-semibold text-gray-700"
+              >
+                <span>Color</span>
+                <span x-text="open ? '−' : '+'"></span>
+              </button>
+
+              <div
+                x-show="open"
+                class="max-h-48 overflow-y-auto pr-2 space-y-2 mt-2"
+              >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Oil & Gas</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Construction</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Chemical</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Food Processing</label
+                >
+              </div>
+            </div>
+
+            <!-- Weight -->
+            <div x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center font-semibold text-gray-700"
+              >
+                <span>Weight</span>
+                <span x-text="open ? '−' : '+'"></span>
+              </button>
+
+              <div
+                x-show="open"
+                class="max-h-48 overflow-y-auto pr-2 space-y-2 mt-2"
+              >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Oil & Gas</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Construction</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Chemical</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Food Processing</label
+                >
+              </div>
+            </div>
+
+            <!-- Technologies -->
+            <div x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center font-semibold text-gray-700"
+              >
+                <span>Technologies</span>
+                <span x-text="open ? '−' : '+'"></span>
+              </button>
+
+              <div
+                x-show="open"
+                class="max-h-48 overflow-y-auto pr-2 space-y-2 mt-2"
+              >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Oil & Gas</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Construction</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Chemical</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Food Processing</label
+                >
+              </div>
+            </div>
+
+            <!-- Toe Cap (Only For Footwear) -->
+            <div x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center font-semibold text-gray-700"
+              >
+                <span
+                  >Toe Cap
+                  <span class="text-[0.6rem]">( Only For Footwear )</span></span
+                >
+                <span x-text="open ? '−' : '+'"></span>
+              </button>
+
+              <div
+                x-show="open"
+                class="max-h-48 overflow-y-auto pr-2 space-y-2 mt-2"
+              >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Oil & Gas</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Construction</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Chemical</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Food Processing</label
+                >
+              </div>
+            </div>
+
+            <!-- Lens Marketing ( Only For Eyewear ) -->
+            <div x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center font-semibold text-gray-700"
+              >
+                <span
+                  >Lens Marketing
+                  <span class="text-[0.6rem]">( Only For Eyewear )</span></span
+                >
+                <span x-text="open ? '−' : '+'"></span>
+              </button>
+
+              <div
+                x-show="open"
+                class="max-h-48 overflow-y-auto pr-2 space-y-2 mt-2"
+              >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Oil & Gas</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Construction</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Chemical</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Food Processing</label
+                >
+              </div>
+            </div>
+
+            <!-- Safety Standards -->
+            <div x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center font-semibold text-gray-700"
+              >
+                <span>Safety Standards</span>
+                <span x-text="open ? '−' : '+'"></span>
+              </button>
+
+              <div
+                x-show="open"
+                class="max-h-48 overflow-y-auto pr-2 space-y-2 mt-2"
+              >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Oil & Gas</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Construction</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Chemical</label
+                >
+                <label class="flex items-center space-x-2"
+                  ><input type="checkbox" class="mr-2" /> Food Processing</label
+                >
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+          <div
+            class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4"
+          >
+            <div>
+              <h1 class="text-4xl font-bold">All Products</h1>
+              <p class="text-md mt-5 text-gray-500">
+                <i class="fa-solid fa-arrow-right-arrow-left pr-3"></i> Product
+                In Comparison
+              </p>
+            </div>
+            <div class="flex items-center space-x-3">
+              <span class="text-gray-600 font-semibold">Sort by:</span>
+              <select class="rounded-md p-2 outline-none">
+                <option>Relevance</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Newest Arrivals</option>
+              </select>
+              <i class="fa-solid fa-arrow-right-arrow-left pr-3"></i>
+              <i class="fa-solid fa-table-cells"></i>
+            </div>
+          </div>
+
+          <!-- Products Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"
+          >
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/1.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0250645
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/2.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0250646
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD Gloves
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/3.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0712056
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD Jacket
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/4.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0712056
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD Jacket
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/1.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0250645
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/2.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0250646
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD Gloves
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/3.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0712056
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD Jacket
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/4.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0712056
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD Jacket
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/1.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0250645
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/2.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0250646
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD Gloves
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/3.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0712056
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD Jacket
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+
+            <!-- Product Card -->
+            <div
+              class="bg-white w-[230px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src="Images/Logo/Original.png"
+                alt=""
+                class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+              />
+              <i
+                class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+              ></i>
+              <div class="relative mt-8">
+                <img
+                  src="Images/Products/4.png"
+                  alt="Product Image"
+                  class="mb-3 w-full object-contain"
+                />
+                <p
+                  class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+                >
+                  CODE: 0712056
+                </p>
+              </div>
+              <p class="text-gray-400 font-semibold">For Walk</p>
+              <h3 class="text-base font-semibold">
+                New Kampala S1P Composite PU ESD Jacket
+              </h3>
+              <p class="text-sm text-gray-400">S1P SRC ESD</p>
+              <button
+                class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+              >
+                <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to
+                Cart
+              </button>
+            </div>
+          </div>
+          <!-- Pagination -->
+          <div class="flex justify-center mt-8 space-x-2 flex-wrap">
+            <button
+              class="px-3 py-1 text-gray-700 rounded hover:bg-[linear-gradient(54.47deg,rgba(30,46,78,0.35)_7.22%,rgba(30,46,78,0)_52.93%,rgba(30,46,78,0.35)_96.76%)] transition"
+            >
+              Previous
+            </button>
+            <button
+              class="px-3 py-1 text-gray-700 bg-[linear-gradient(54.47deg,rgba(30,46,78,0.35)_7.22%,rgba(30,46,78,0)_52.93%,rgba(30,46,78,0.35)_96.76%)] rounded transition"
+            >
+              1
+            </button>
+            <button
+              class="px-3 py-1 text-gray-700 rounded hover:bg-[linear-gradient(54.47deg,rgba(30,46,78,0.35)_7.22%,rgba(30,46,78,0)_52.93%,rgba(30,46,78,0.35)_96.76%)] transition"
+            >
+              2
+            </button>
+            <button
+              class="px-3 py-1 text-gray-700 rounded hover:bg-[linear-gradient(54.47deg,rgba(30,46,78,0.35)_7.22%,rgba(30,46,78,0)_52.93%,rgba(30,46,78,0.35)_96.76%)] transition"
+            >
+              3
+            </button>
+            <button
+              class="px-3 py-1 text-gray-700 rounded hover:bg-[linear-gradient(54.47deg,rgba(30,46,78,0.35)_7.22%,rgba(30,46,78,0)_52.93%,rgba(30,46,78,0.35)_96.76%)] transition"
+            >
+              4
+            </button>
+            <button
+              class="px-3 py-1 text-gray-700 rounded hover:bg-[linear-gradient(54.47deg,rgba(30,46,78,0.35)_7.22%,rgba(30,46,78,0)_52.93%,rgba(30,46,78,0.35)_96.76%)] transition"
+            >
+              5
+            </button>
+            <button
+              class="px-3 py-1 text-gray-700 rounded hover:bg-[linear-gradient(54.47deg,rgba(30,46,78,0.35)_7.22%,rgba(30,46,78,0)_52.93%,rgba(30,46,78,0.35)_96.76%)] transition"
+            >
+              6
+            </button>
+            <button
+              class="px-3 py-1 text-gray-700 rounded hover:bg-[linear-gradient(54.47deg,rgba(30,46,78,0.35)_7.22%,rgba(30,46,78,0)_52.93%,rgba(30,46,78,0.35)_96.76%)] transition"
+            >
+              7
+            </button>
+            <button
+              class="px-3 py-1 text-gray-700 rounded hover:bg-[linear-gradient(54.47deg,rgba(30,46,78,0.35)_7.22%,rgba(30,46,78,0)_52.93%,rgba(30,46,78,0.35)_96.76%)] transition"
+            >
+              Next
+            </button>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- Trusted Brands -->
+    <section
+      class="container text-center mx-auto px-5 py-12 flex flex-col justify-center items-center gap-8"
+    >
+      <div class="space-y-2">
+        <h2 class="text-[#101B32] text-4xl md:text-5xl font-bold">
+          Trusted Brands
+        </h2>
+        <p class="text-gray-500">
+          We partner with the world's leading manufacturers to bring you the
+          best
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center items-center gap-[2rem] mt-8">
+        <img
+          src="Images/Trusted Brands/169b1870f3d7cd1699663e464e74b426eaaaf125.png"
+          alt="Brand 1"
+          class="h-12 object-contain w-[10rem]"
+        />
+        <img
+          src="Images/Trusted Brands/1f9102f83af819c83e96b928418293188f41168c.png"
+          alt="Brand 2"
+          class="h-12 object-contain w-[10rem]"
+        />
+        <img
+          src="Images/Trusted Brands/2ec7ca558d45d1e8ef60bb6441b56e10902f5527.png"
+          alt="Brand 3"
+          class="h-12 object-contain w-[10rem]"
+        />
+        <img
+          src="Images/Trusted Brands/849bca692eae522db9436336fec4d9dec2a20f3d.png"
+          alt="Brand 4"
+          class="h-12 object-contain w-[10rem]"
+        />
+        <img
+          src="Images/Trusted Brands/8ce85f0c5aa738101ef63a48b51831d9a3a7a229.png"
+          alt="Brand 5"
+          class="h-12 object-contain w-[10rem]"
+        />
+        <img
+          src="Images/Trusted Brands/cbcd6ce5dfc65a0db321487a8f56a8827426da9a.png"
+          alt="Brand 6"
+          class="h-12 object-contain w-[10rem]"
+        />
+      </div>
+    </section>
+
+    <section class="w-full py-16">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 flex-wrap"
+      >
+        <!-- 1st Box -->
+        <div
+          class="text-white p-6 flex-shrink-0 w-full sm:w-80 md:w-64 lg:w-72 h-auto md:h-56 text-center bg-[url('Images/Icons/Rectangle.png')] bg-cover bg-center relative rounded-xl"
+        >
+          <div>
+            <img
+              src="Images/Icons/Ellipse.png"
+              alt=""
+              class="absolute z-20 -top-24 -right-24 md:-top-[6rem] md:-right-[6rem]"
+            />
+          </div>
+          <div class="flex justify-center mb-4">
+            <img src="Images/Icons/1.png" alt="" />
+          </div>
+          <h3 class="text-lg font-bold tracking-wide mb-2">1ST– CHOOSE</h3>
+          <p class="text-sm leading-relaxed opacity-80">
+            Choose all your Products and add them to your Quote Cart.
+          </p>
+        </div>
+
+        <!-- Arrow -->
+        <div class="hidden md:flex items-center">
+          <svg
+            width="68"
+            height="47"
+            viewBox="0 0 68 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#filter0_din_3_5305)">
+              <path
+                d="M49.705 22.1538L38.0993 33.6523H48.3404L63.6589 18.3915L48.3403 3.13056L38.2268 3.19372L49.7903 14.7136L11.7392 14.7136V22.1538L49.705 22.1538Z"
+                fill="url(#paint0_linear_3_5305)"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_din_3_5305"
+                x="0.000109434"
+                y="0.000175476"
+                width="67.5719"
+                height="46.1739"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dx="-3.91305" dy="4.69566" />
+                <feGaussianBlur stdDeviation="3.91305" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.28 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_3_5305"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset />
+                <feGaussianBlur stdDeviation="20.3479" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.49 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="shape"
+                  result="effect2_innerShadow_3_5305"
+                />
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="2.5555517673492432 2.5555517673492432"
+                  stitchTiles="stitch"
+                  numOctaves="3"
+                  result="noise"
+                  seed="7322"
+                />
+                <feColorMatrix
+                  in="noise"
+                  type="luminanceToAlpha"
+                  result="alphaNoise"
+                />
+                <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                  <feFuncA
+                    type="discrete"
+                    tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
+                  />
+                </feComponentTransfer>
+                <feComposite
+                  operator="in"
+                  in2="effect2_innerShadow_3_5305"
+                  in="coloredNoise1"
+                  result="noise1Clipped"
+                />
+                <feFlood
+                  flood-color="rgba(0, 0, 0, 0.25)"
+                  result="color1Flood"
+                />
+                <feComposite
+                  operator="in"
+                  in2="noise1Clipped"
+                  in="color1Flood"
+                  result="color1"
+                />
+                <feMerge result="effect3_noise_3_5305">
+                  <feMergeNode in="effect2_innerShadow_3_5305" />
+                  <feMergeNode in="color1" />
+                </feMerge>
+                <feBlend
+                  mode="normal"
+                  in="effect3_noise_3_5305"
+                  in2="effect1_dropShadow_3_5305"
+                  result="effect3_noise_3_5305"
+                />
+              </filter>
+              <linearGradient
+                id="paint0_linear_3_5305"
+                x1="11.0206"
+                y1="32.5666"
+                x2="46.1449"
+                y2="-10.9922"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#243262" />
+                <stop offset="1" stop-color="#3775AA" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- 2nd Box -->
+        <div
+          class="text-white p-6 flex-shrink-0 w-full sm:w-80 md:w-64 lg:w-72 h-auto md:h-56 text-center bg-[url('Images/Icons/Rectangle2.png')] bg-cover bg-center relative rounded-lg"
+        >
+          <div>
+            <img
+              src="Images/Icons/Ellipse.png"
+              alt=""
+              class="absolute z-20 -top-24 -right-24 md:-top-[6rem] md:-right-[6rem]"
+            />
+          </div>
+          <div class="flex justify-center mb-4">
+            <img src="Images/Icons/2.png" alt="" />
+          </div>
+          <h3 class="text-lg font-bold tracking-wide mb-2">2ND– REQUEST</h3>
+          <p class="text-sm leading-relaxed opacity-80">
+            Place your order in the Budget Cart.
+          </p>
+        </div>
+
+        <!-- Arrow -->
+        <div class="hidden md:flex items-center">
+          <svg
+            width="68"
+            height="47"
+            viewBox="0 0 68 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#filter0_din_3_5305)">
+              <path
+                d="M49.705 22.1538L38.0993 33.6523H48.3404L63.6589 18.3915L48.3403 3.13056L38.2268 3.19372L49.7903 14.7136L11.7392 14.7136V22.1538L49.705 22.1538Z"
+                fill="url(#paint0_linear_3_5305)"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_din_3_5305"
+                x="0.000109434"
+                y="0.000175476"
+                width="67.5719"
+                height="46.1739"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dx="-3.91305" dy="4.69566" />
+                <feGaussianBlur stdDeviation="3.91305" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.28 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_3_5305"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset />
+                <feGaussianBlur stdDeviation="20.3479" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.49 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="shape"
+                  result="effect2_innerShadow_3_5305"
+                />
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="2.5555517673492432 2.5555517673492432"
+                  stitchTiles="stitch"
+                  numOctaves="3"
+                  result="noise"
+                  seed="7322"
+                />
+                <feColorMatrix
+                  in="noise"
+                  type="luminanceToAlpha"
+                  result="alphaNoise"
+                />
+                <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                  <feFuncA
+                    type="discrete"
+                    tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
+                  />
+                </feComponentTransfer>
+                <feComposite
+                  operator="in"
+                  in2="effect2_innerShadow_3_5305"
+                  in="coloredNoise1"
+                  result="noise1Clipped"
+                />
+                <feFlood
+                  flood-color="rgba(0, 0, 0, 0.25)"
+                  result="color1Flood"
+                />
+                <feComposite
+                  operator="in"
+                  in2="noise1Clipped"
+                  in="color1Flood"
+                  result="color1"
+                />
+                <feMerge result="effect3_noise_3_5305">
+                  <feMergeNode in="effect2_innerShadow_3_5305" />
+                  <feMergeNode in="color1" />
+                </feMerge>
+                <feBlend
+                  mode="normal"
+                  in="effect3_noise_3_5305"
+                  in2="effect1_dropShadow_3_5305"
+                  result="effect3_noise_3_5305"
+                />
+              </filter>
+              <linearGradient
+                id="paint0_linear_3_5305"
+                x1="11.0206"
+                y1="32.5666"
+                x2="46.1449"
+                y2="-10.9922"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#243262" />
+                <stop offset="1" stop-color="#3775AA" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- 3rd Box -->
+        <div
+          class="text-white p-6 flex-shrink-0 w-full sm:w-80 md:w-64 lg:w-72 h-auto md:h-56 text-center bg-[url('Images/Icons/Rectangle2.png')] bg-cover bg-center relative rounded-lg"
+        >
+          <div>
+            <img
+              src="Images/Icons/Ellipse.png"
+              alt=""
+              class="absolute z-20 -top-24 -right-24 md:-top-[6rem] md:-right-[6rem]"
+            />
+          </div>
+          <div class="flex justify-center mb-4">
+            <img src="Images/Icons/3.png" alt="" />
+          </div>
+          <h3 class="text-lg font-bold tracking-wide mb-2">3RD– ANALYSIS</h3>
+          <p class="text-sm leading-relaxed opacity-80">
+            Our Team will analyze the Budget Request and respond with the
+            Quotes.
+          </p>
+        </div>
+
+        <!-- Arrow -->
+        <div class="hidden md:flex items-center">
+          <svg
+            width="68"
+            height="47"
+            viewBox="0 0 68 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#filter0_din_3_5305)">
+              <path
+                d="M49.705 22.1538L38.0993 33.6523H48.3404L63.6589 18.3915L48.3403 3.13056L38.2268 3.19372L49.7903 14.7136L11.7392 14.7136V22.1538L49.705 22.1538Z"
+                fill="url(#paint0_linear_3_5305)"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_din_3_5305"
+                x="0.000109434"
+                y="0.000175476"
+                width="67.5719"
+                height="46.1739"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dx="-3.91305" dy="4.69566" />
+                <feGaussianBlur stdDeviation="3.91305" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.28 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_3_5305"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset />
+                <feGaussianBlur stdDeviation="20.3479" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.49 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="shape"
+                  result="effect2_innerShadow_3_5305"
+                />
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="2.5555517673492432 2.5555517673492432"
+                  stitchTiles="stitch"
+                  numOctaves="3"
+                  result="noise"
+                  seed="7322"
+                />
+                <feColorMatrix
+                  in="noise"
+                  type="luminanceToAlpha"
+                  result="alphaNoise"
+                />
+                <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                  <feFuncA
+                    type="discrete"
+                    tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
+                  />
+                </feComponentTransfer>
+                <feComposite
+                  operator="in"
+                  in2="effect2_innerShadow_3_5305"
+                  in="coloredNoise1"
+                  result="noise1Clipped"
+                />
+                <feFlood
+                  flood-color="rgba(0, 0, 0, 0.25)"
+                  result="color1Flood"
+                />
+                <feComposite
+                  operator="in"
+                  in2="noise1Clipped"
+                  in="color1Flood"
+                  result="color1"
+                />
+                <feMerge result="effect3_noise_3_5305">
+                  <feMergeNode in="effect2_innerShadow_3_5305" />
+                  <feMergeNode in="color1" />
+                </feMerge>
+                <feBlend
+                  mode="normal"
+                  in="effect3_noise_3_5305"
+                  in2="effect1_dropShadow_3_5305"
+                  result="effect3_noise_3_5305"
+                />
+              </filter>
+              <linearGradient
+                id="paint0_linear_3_5305"
+                x1="11.0206"
+                y1="32.5666"
+                x2="46.1449"
+                y2="-10.9922"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#243262" />
+                <stop offset="1" stop-color="#3775AA" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- 4th Box -->
+        <div
+          class="text-white p-6 flex-shrink-0 w-full sm:w-80 md:w-64 lg:w-72 h-auto md:h-56 text-center bg-[url('Images/Icons/Rectangle2.png')] bg-cover bg-center relative rounded-lg"
+        >
+          <div>
+            <img
+              src="Images/Icons/Ellipse.png"
+              alt=""
+              class="absolute z-20 -top-24 -right-24 md:-top-[6rem] md:-right-[6rem]"
+            />
+          </div>
+          <div class="flex justify-center mb-4">
+            <img src="Images/Icons/4.png" alt="" />
+          </div>
+          <h3 class="text-lg font-bold tracking-wide mb-2">4TH– CONVERSION</h3>
+          <p class="text-sm leading-relaxed opacity-80">
+            After the Budget is validated by the Customer, we convert it into an
+            Order!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="container relative mx-auto px-5 py-12 flex flex-col justify-center items-center"
+    >
+      <div class="space-y-2 text-center">
+        <h2 class="text-[#101B32] text-4xl md:text-5xl font-bold">
+          Industry Insights
+        </h2>
+        <p class="text-gray-500">
+          Expert tips, guides, and updates from the construction world
+        </p>
+      </div>
+
+      <main class="flex-1 my-12">
+        <!-- Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-6"
+        >
+          <!-- Card -->
+          <div
+            class="bg-white hover:text-yellow w-[400px] border rounded-lg flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <div>
+              <div class="relative">
+                <img
+                  src="Images/industry insights/image 1.jpg"
+                  alt="Product Image"
+                  class="mb-3 object-contain"
+                />
+                <div class="absolute inset-0 bg-[#000]/30"></div>
+              </div>
+            </div>
+            <div class="p-4 flex flex-col">
+              <p class="text-gray-400 font-semibold">
+                <i class="fa-solid fa-calendar-days mr-3"></i>March 15,2024
+              </p>
+              <h3 class="text-base font-semibold">
+                10 Essential Power Tools Every Professional Needs
+              </h3>
+              <p class="text-md text-gray-400">
+                Discover the must have power tools that will elevate your
+                construction projects to professional standards.
+              </p>
+              <a href="#" class="mt-3 text-[#101B32] hover:underline">
+                Read More <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="bg-white w-[400px] border rounded-lg flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <div>
+              <div class="relative">
+                <img
+                  src="Images/industry insights/image 2.jpg"
+                  alt="Product Image"
+                  class="mb-3 object-contain"
+                />
+                <div class="absolute inset-0 bg-[#000]/30"></div>
+              </div>
+            </div>
+            <div class="p-4 flex flex-col">
+              <p class="text-gray-400 font-semibold">
+                <i class="fa-solid fa-calendar-days mr-3"></i>March 12,2024
+              </p>
+              <h3 class="text-base font-semibold">
+                Suitable Building Materials: The Future of Construction
+              </h3>
+              <p class="text-md text-gray-400">
+                Explore Eco-friendly materials that don't compromise on quality
+                or durablity.
+              </p>
+              <a href="#" class="mt-3 text-[#101B32] hover:underline">
+                Read More <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="bg-white w-[400px] border rounded-lg flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <div>
+              <div class="relative">
+                <img
+                  src="Images/industry insights/image 3.png"
+                  alt="Product Image"
+                  class="mb-3 object-contain"
+                />
+                <div class="absolute inset-0 bg-[#000]/30"></div>
+              </div>
+            </div>
+            <div class="p-4 flex flex-col">
+              <p class="text-gray-400 font-semibold">
+                <i class="fa-solid fa-calendar-days mr-3"></i>March 8,2024
+              </p>
+              <h3 class="text-base font-semibold">
+                Saftey First: Complete Guide to Workplace Protection
+              </h3>
+              <p class="text-md text-gray-400">
+                Essential safety equipment and best practices for construction
+                sites.
+              </p>
+              <a href="#" class="mt-3 text-[#101B32] hover:underline">
+                Read More <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b1a36] text-gray-300 pt-16 pb-4 rounded-t-[50px]">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-12"
+      >
+        <!-- Left Section -->
+        <div class="space-y-4 md:col-span-2 lg:col-span-2">
+          <img
+            src="Images/Logo/CLS White Logo.png"
+            alt="CLS Logo"
+            class="w-86"
+          />
+
+          <p class="text-sm leading-relaxed">
+            Leading supplier of professional PPE and safety equipment for
+            industrial and corporate clients worldwide.
+          </p>
+
+          <!-- Contact Info -->
+          <div class="mt-6">
+            <h3 class="text-white font-semibold text-lg mb-6">
+              CONTACT INFORMATION
+            </h3>
+            <ul class="text-sm space-y-2">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone"></i> +1 (234) 567-890
+              </li>
+
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope"></i> info@cls.com
+              </li>
+
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-location-dot mt-1"></i>
+                <span>123 Industrial Ave, City, Country</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sponsors -->
+          <div class="mt-3">
+            <h3 class="text-white font-semibold text-lg mb-6">MAIN SPONSOR</h3>
+
+            <div class="flex items-center space-x-4">
+              <img
+                src="Images/Footer/image 1.png"
+                class="w-[79px] object-contain"
+              />
+              <img
+                src="Images/Footer/image 2.png"
+                class="w-[79px] object-contain"
+              />
+              <img
+                src="Images/Footer/image 3.png"
+                class="w-[79px] object-contain"
+              />
+            </div>
+
+            <div class="mt-6">
+              <img src="Images/Footer/Group.png" class="w-[406px]" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Links Section -->
+        <div class="md:col-span-2 grid grid-cols-2 items-start">
+          <!-- Company -->
+          <div>
+            <h3 class="text-white text-lg font-semibold mb-3">Company</h3>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:text-white">About Us</a></li>
+              <li><a href="#" class="hover:text-white">Our History</a></li>
+              <li><a href="#" class="hover:text-white">Sustainability</a></li>
+              <li><a href="#" class="hover:text-white">Careers</a></li>
+              <li>
+                <a href="#" class="hover:text-white">Become a Distributor</a>
+              </li>
+              <li><a href="#" class="hover:text-white">Our Partners</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h3 class="text-white text-lg font-semibold mb-3">Resources</h3>
+            <ul class="space-y-1 text-sm">
+              <li>
+                <a href="#" class="hover:text-white">Download Catalogues</a>
+              </li>
+              <li><a href="#" class="hover:text-white">Safety Standards</a></li>
+              <li><a href="#" class="hover:text-white">Certificates</a></li>
+              <li><a href="#" class="hover:text-white">Technical Sheets</a></li>
+              <li><a href="#" class="hover:text-white">Selection Guides</a></li>
+              <li><a href="#" class="hover:text-white">Blog & News</a></li>
+            </ul>
+          </div>
+
+          <!-- Products -->
+          <div>
+            <h3 class="text-white text-lg font-semibold mb-3">Products</h3>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:text-white">Safety Footwear</a></li>
+              <li><a href="#" class="hover:text-white">Safety Gloves</a></li>
+              <li><a href="#" class="hover:text-white">Workwear</a></li>
+              <li><a href="#" class="hover:text-white">PPE Equipment</a></li>
+              <li><a href="#" class="hover:text-white">Accessories</a></li>
+              <li><a href="#" class="hover:text-white">New Arrivals</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h3 class="text-white text-lg font-semibold mb-3">Support</h3>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:text-white">Contact Us</a></li>
+              <li><a href="#" class="hover:text-white">FAQ</a></li>
+              <li><a href="#" class="hover:text-white">Login / Register</a></li>
+              <li><a href="#" class="hover:text-white">My Wishlist</a></li>
+              <li><a href="#" class="hover:text-white">My Quotes</a></li>
+              <li><a href="#" class="hover:text-white">Shopping Info</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="md:col-span-2 lg:col-span-2">
+          <h3 class="text-white text-lg font-semibold mb-3">Newsletter</h3>
+          <p class="text-sm mb-4">
+            Get updates on new products and special offers.
+          </p>
+
+          <form class="flex-col space-y-3 w-full">
+            <input
+              type="email"
+              placeholder="Your Email"
+              class="w-full px-4 py-2 rounded text-gray-800 focus:outline-none"
+            />
+            <button
+              class="bg-red-600 w-full px-5 py-2 rounded text-white font-medium hover:bg-red-500 transition"
+            >
+              Subscribe
+            </button>
+          </form>
+
+          <!-- Social Icons -->
+          <div class="flex space-x-2 mt-5">
+            <a
+              href="#"
+              class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"
+              ><i class="fa-brands fa-facebook-f text-[#0b1a36]"></i
+            ></a>
+            <a
+              href="#"
+              class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"
+              ><i class="fa-brands fa-linkedin-in text-[#0b1a36]"></i
+            ></a>
+            <a
+              href="#"
+              class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"
+              ><i class="fa-brands fa-twitter text-[#0b1a36]"></i
+            ></a>
+            <a
+              href="#"
+              class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"
+              ><i class="fa-brands fa-instagram text-[#0b1a36]"></i
+            ></a>
+          </div>
+
+          <!-- QUICK LINKS -->
+          <div class="mt-8">
+            <h3 class="text-white text-lg font-semibold mb-3">Quick Links</h3>
+
+            <div class="grid grid-cols-2 gap-8 items-start">
+              <div class="flex-col">
+                <div>
+                  <a href="#" class="text-white text-sm font-semibold underline"
+                    >Footwear</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Protective Footwear</li>
+                    <li>Womens Footwear</li>
+                    <li>ESD / HRO / Military</li>
+                    <li>Steel / Composite / Fiberglass</li>
+                    <li>PVC, PU & EVA Footwear</li>
+                    <li>Accessories</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="#" class="text-white text-sm font-semibold underline"
+                    >Gloves</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Protective & Multipurpose</li>
+                    <li>Anti-cut / Thermal / Chemical</li>
+                    <li>Leather / Welding</li>
+                    <li>Disposable / Antistatic</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="#" class="text-white text-sm font-semibold underline"
+                    >Clothing</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Workwear</li>
+                    <li>Fire Retardant</li>
+                    <li>Thermal / Outerwear</li>
+                    <li>Disposable Wear</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="flex-col">
+                <div>
+                  <a href="#" class="text-white text-sm font-semibold underline"
+                    >Signage & Safety</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Traffic Signs</li>
+                    <li>Fire Signs</li>
+                    <li>Information Signs</li>
+                    <li>Barriers & Cones</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="#" class="text-white text-sm font-semibold underline"
+                    >Protection Equipment</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Fall Protection</li>
+                    <li>Hearing Protection</li>
+                    <li>Eye & Face</li>
+                    <li>Respiratory</li>
+                    <li>Head Protection</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="#" class="text-white text-xs font-semibold underline"
+                    >Other Safety Products</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Firefighting / First Aid</li>
+                    <li>Lifting Straps</li>
+                    <li>Eye Wash Stations</li>
+                    <li>DIY / Merchandising</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 mt-6 pt-4 px-6">
+        <div
+          class="max-w-7xl mx-auto flex flex-col sm:flex-row text-center sm:text-left items-center justify-between text-xs text-gray-400"
+        >
+          <p class="text-white mb-3 sm:mb-0">
+            © 2025 CLS.PT. All rights reserved. |
+            <a href="https://thesocialnexus.org/" class="text-white"
+              >Made by 🤍 TSN</a
+            >
+          </p>
+
+          <img
+            src="Images/Footer/bottom footer brands.png"
+            class="w-40 sm:w-auto"
+          />
+
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <a href="#" class="hover:text-white">Terms of Service</a>
+            <a href="#" class="hover:text-white">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const langBtn = document.getElementById("lang-btn");
+      const langMenu = document.getElementById("lang-menu");
+
+      menuBtn.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden")
+      );
+      langBtn.addEventListener("click", () =>
+        langMenu.classList.toggle("hidden")
+      );
+
+      document.addEventListener("click", (e) => {
+        if (!langBtn.contains(e.target) && !langMenu.contains(e.target))
+          langMenu.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

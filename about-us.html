@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="bg-[radial-gradient(circle_at_top_center,#1E2E4E,#101B32)] text-white text-sm">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 py-2 gap-2">
+            <!-- Left -->
+            <div class="flex flex-wrap items-center justify-center md:justify-start space-x-4">
+                <span><i class="fa-solid fa-phone mr-2"></i>+351 258 320 300</span>
+                <span><i class="fa-regular fa-envelope mr-2"></i>geral@cls.pt</span>
+            </div>
+
+            <!-- Right -->
+            <div class="flex flex-wrap items-center justify-center md:justify-end space-x-4">
+                <span class="hidden sm:block">Certified PPE solutions for professionals</span>
+
+                <!-- Language Dropdown -->
+                <div class="relative">
+                    <button id="lang-btn" class="flex items-center space-x-1 hover:text-indigo-400 focus:outline-none">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>PT</span>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="lang-menu"
+                        class="hidden absolute right-0 mt-2 w-36 rounded-md bg-white text-gray-800 shadow-md ring-1 ring-black/5 z-50">
+                        <a href="#" class="block px-4 py-2 text-sm hover:bg-indigo-100">PT - Português</a>
+                        <a href="#" class="block px-4 py-2 text-sm hover:bg-indigo-100">EN - English</a>
+                        <a href="#" class="block px-4 py-2 text-sm hover:bg-indigo-100">ES - Español</a>
+                    </div>
+                </div>
+
+                <!-- Login -->
+                <a href="#" class="flex items-center hover:text-indigo-400">
+                    <i class="fa-regular fa-user mr-1"></i> To Enter
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="images/Logo/Cls Logo.png" alt="CLS Logo" class="h-10 w-auto">
+            </a>
+
+            <!-- Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-gray-700">
+                <a href="#" class="hover:text-indigo-600">Products</a>
+                <a href="#" class="hover:text-indigo-600">Enterprise</a>
+                <a href="#" class="hover:text-indigo-600">Catalogues</a>
+                <a href="#" class="hover:text-indigo-600">Technical Info</a>
+                <a href="#" class="hover:text-indigo-600">Help</a>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <!-- Search -->
+                <div class="relative">
+                    <input type="text" placeholder="Search products..."
+                        class="w-56 border rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <i class="fa-solid fa-magnifying-glass absolute right-3 top-2 text-gray-400"></i>
+                </div>
+
+                <!-- Wishlist -->
+                <button class="relative text-gray-600 hover:text-indigo-600">
+                    <i class="fa-regular fa-heart text-xl"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold rounded-full w-4 h-4 flex items-center justify-center">2</span>
+                </button>
+
+                <!-- Cart -->
+                <button class="relative text-gray-600 hover:text-indigo-600">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold rounded-full w-4 h-4 flex items-center justify-center">2</span>
+                </button>
+
+                <!-- Request Quote -->
+                <a href="#"
+                    class="bg-[#1E2E4E] hover:bg-[#243a63] text-white text-sm font-semibold px-4 py-2 rounded-md">
+                    Request Quote
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="lg:hidden text-gray-700 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-gray-100 text-gray-800 lg:hidden">
+            <a href="#" class="block px-6 py-2 hover:bg-gray-200">Products</a>
+            <a href="#" class="block px-6 py-2 hover:bg-gray-200">Enterprise</a>
+            <a href="#" class="block px-6 py-2 hover:bg-gray-200">Catalogues</a>
+            <a href="#" class="block px-6 py-2 hover:bg-gray-200">Technical Info</a>
+            <a href="#" class="block px-6 py-2 hover:bg-gray-200">Help</a>
+            <div class="border-t border-gray-300 my-2"></div>
+            <div class="px-6 py-3 space-y-2">
+                <input type="text" placeholder="Search products..." class="w-full border rounded-md px-3 py-2 text-sm">
+                <a href="#" class="block text-indigo-600 font-semibold">Request Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-white overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="images/Home Images/hero-image.png" alt="Construction background"
+                class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-[#132039B2]/90"></div>
+        </div>
+
+        <div class="relative container mx-auto px-6 py-12 lg:py-6 flex flex-col items-center gap-12">
+            <div class="text-white text-center">
+                <span
+                    class="bg-white/10 border border-white/20 px-6 py-1 rounded-full text-sm font-medium mb-4 inline-block">
+                    About Us
+                </span>
+
+                <h1 class="text-3xl md:text-5xl lg:text-5xl font-bold leading-tight">
+                    Enterprise - <br class="hidden md:block ">Who We Are
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="flex-col lg:flex-row container mx-auto justify-center items-center p-6">
+        <div class="max-w-6xl mx-auto px-6 lg:w-auto">
+            <!-- Breadcrumbs -->
+            <nav class="text-md text-gray-500 mb-4">
+                <a href="/" class="hover:text-gray-700">Home</a> /
+                <span class="text-gray-700">Enterprise - Who We Are</span>
+            </nav>
+        </div>
+    </section>
+
+
+    <section class="w-full pb-16">
+        <div class="max-w-4xl mx-auto text-center px-6">
+
+            <!-- Heading -->
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">
+                CLS Brands, Ltd. — We Inspire Your Safety
+            </h1>
+
+            <!-- Description -->
+            <p class="text-gray-600 mb-10 leading-relaxed">
+                CLS Brands, Ltd. is a company focused on the development and production of
+                workwear, uniforms, and all kinds of Personal Protective Equipment (PPE).
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <h2
+                    class="px-5 py-2 text-[0.8rem] bg-gray-200 border border-gray-300 text-gray-700 rounded-full transition">
+                    CLS Brands
+                </h2>
+                <h2
+                    class="px-5 py-2 text-[0.8rem] bg-gray-200 border border-gray-300 text-gray-700 rounded-full transition">
+                    FOR WALK®
+                </h2>
+                <h2
+                    class="px-5 py-2 text-[0.8rem] bg-gray-200 border border-gray-300 text-gray-700 rounded-full transition">
+                    GLOVA®
+                </h2>
+                <h2
+                    class="px-5 py-2 text-[0.8rem] bg-gray-200 border border-gray-300 text-gray-700 rounded-full transition">
+                    FIELD®
+                </h2>
+                <h2
+                    class="px-5 py-2 text-[0.8rem] bg-gray-200 border border-gray-300 text-gray-700 rounded-full transition">
+                    FORWEAR®
+                </h2>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="w-full py-16 bg-transparent overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Title -->
+            <h2 class="text-4xl md:text-4xl font-bold text-center text-gray-800 mb-2">
+                Our Brands
+            </h2>
+            <p class="text-center text-gray-600 mb-12">
+                Comprehensive protection solutions through specialized brand expertise
+            </p>
+
+            <!-- Cards grid -->
+            <div class="grid gap-6 md:grid-cols-3 justify-center relative">
+                <div
+                    class="absolute inset-0 bg-[url('Images/About-Us/Bg-about-us.png')] bg-[length:68rem] bg-no-repeat bg-center opacity-5">
+                </div>
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/SVG1.png" alt="">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-lg">CLS Brands, Ltd.</h3>
+                    <p class="text-sm text-gray-500 mb-3">PPE & Workwear</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        The parent company behind our integrated protection solutions.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/SVG2.png" alt="">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-lg">FOR WALK®</h3>
+                    <p class="text-sm text-gray-500 mb-3">Safety Footwear</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        A Portuguese brand combining latest trends with ultimate comfort, safety & technology,
+                        delivering outstanding performance across industries.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/SVG3.png" alt="">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-lg">GLOVA®</h3>
+                    <p class="text-sm text-gray-500 mb-3">Safety Gloves</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        We constantly research, develop and optimize hand protection solutions for the market.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:col-span-1">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/SVG4.png" alt="">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-lg">FIELD®</h3>
+                    <p class="text-sm text-gray-500 mb-3">PPE Equipment</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Operating in disposables, hearing protection, respiratory protection, and more —
+                        our aim is to deliver quality at fair cost.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:col-span-1">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/SVG5.png" alt="">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-lg">FORWEAR®</h3>
+                    <p class="text-sm text-gray-500 mb-3">Protective Workwear</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Daily we work to develop and refine protective clothing solutions adapted
+                        to individual workwear needs.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-5 py-12 flex flex-col justify-center items-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Title -->
+            <h2 class="text-4xl md:text-4xl font-bold text-center text-gray-800 mb-2">
+                Representative Video of the New Facilities
+            </h2>
+            <p class="text-center text-gray-600 mb-8">
+                With the development of the new infrastructure, which will have an area of ​​over seven thousand square
+                meters and will be a decisive investment in work and safety textiles at a national and international
+                level, CLS - Brands, Lda® will fulfill the requirement of being one of the largest warehouses and
+                showrooms in the Iberian Peninsula in the area of ​​safety and protection at work (PPE). This new space
+                will be located next to the accesses to the A28 (Viana do Castelo-Porto motorway) and has a final
+                deadline for completion scheduled for 2024.
+            </p>
+            <img src="Images/About-Us/Video-image.png" alt="">
+        </div>
+    </section>
+
+
+    <section class="container mx-auto px-5 py-12 flex flex-col justify-center items-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Title -->
+            <h2 class="text-5xl md:text-4xl font-bold text-center text-gray-800 mb-8">
+                Mission, Values & Sustainability
+            </h2>
+            <!-- Card -->
+            <div class="bg-white rounded-xl text-center space-y-5 shadow-sm border border-gray-200 p-8">
+                <h2 class="font-semibold text-[#0b1a36] text-3xl">Our Approach</h2>
+                <p class="text-sm text-gray-500 mb-6 mx-auto min-w-3xl">We believe our workforce is fundamental to
+                    achieving our
+                    business
+                    goals. We are fully committed to safeguarding safety, human rights, and well-being of all our
+                    employees.
+                    To that end, we have launched a new initiative with clearly defined short- and long-term
+                    sustainability
+                    goals. We call it <span class="font-bold text-[#0b1a36]">CLS Brands – Sustainability®.</span></p>
+                <p class="text-gray-600 text-sm mx-auto">
+                    <span class="font-bold text-[#0b1a36]">CLS Brands – Vending®</span> has developed an efficient,
+                    accessible solution for the distribution of PPE
+                    via automated vending machines.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-5 py-12 flex flex-col justify-center items-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <img src="Images/About-Us/Brands.png" alt="Brands Image">
+        </div>
+    </section>
+
+    <section class="container mx-auto px-5 py-10 flex flex-col justify-center items-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+                <!-- LEFT TEXT -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        Graphic Identity
+                    </h2>
+
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Below you'll find a button that gives you access to our brands' various
+                        graphic guidelines, including the graphic standards manual, fonts, and
+                        logos in their various forms and versions.
+                    </p>
+
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        You can use it to promote our own brands and/or institution on your
+                        communication media, such as websites, social networks or even
+                        'direct marketing'.
+                    </p>
+
+                    <a href="#"
+                        class="inline-block px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg shadow hover:bg-gray-800 transition">
+                        Download Logotipos & Normas
+                    </a>
+                </div>
+
+                <!-- RIGHT IMAGES -->
+                <div class="relative flex gap-4">
+
+                    <!-- LEFT COLUMN (STACKED) -->
+                    <div class="flex flex-col justify-between gap-4">
+                        <img src="Images/About-Us/Graphic Identiity/Workplace.png"
+                            class="w-40 h-40 object-cover rounded-xl shadow-lg" alt="Image 1">
+
+                        <img src="Images/About-Us/Graphic Identiity/Workplace.png"
+                            class="w-40 h-40 object-cover rounded-xl shadow-lg" alt="Image 2">
+                    </div>
+
+                    <!-- RIGHT COLUMN (LAYERED) -->
+                    <div class="relative w-full">
+
+                        <!-- BACK IMAGE (FADED) -->
+                        <img src="Images/About-Us/Graphic Identiity/Building.jpg"
+                            class="w-56 h-full object-cover rounded-xl shadow-md opacity-40 absolute left-20"
+                            alt="Background Image">
+
+                        <!-- FRONT IMAGE -->
+                        <img src="Images/About-Us/Graphic Identiity/Warehouse.png"
+                            class="w-93 h-80 object-cover rounded-xl shadow-xl relative -bottom-4 z-10"
+                            alt="Main Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-5 py-12 flex flex-col justify-center items-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-4xl mx-auto py-16 px-6">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">On the Front Lines</h2>
+                <p class="text-center text-xl text-gray-500 mb-16">Our journey from humble beginnings to industry
+                    leadership</p>
+
+                <!-- Timeline -->
+                <div class="relative border-l-[0.1rem] border-gray-500 pl-8">
+
+                    <!-- Origin -->
+                    <div class="mb-12 max-w-2xl ml-auto flex">
+                        <div
+                            class="absolute -left-[3.6rem] top-17 w-12 h-12 p-3 bg-[#1E2E4E] items-center justify-center rounded-full">
+                            <img src="Images/About-Us/Svg's/On Front Lines/SVG.png" alt="">
+                        </div>
+                        <div class="flex items-start space-x-4 shadow-lg rounded-md p-5">
+                            <div class="flex-1">
+                                <div class="flex justify-between mb-5 items-center">
+                                    <h3 class="text-xl font-bold text-[#1E2E4E]">Origins</h3>
+                                    <div
+                                        class="text-md text-[#101B32] bg-gray-200 rounded-full px-3 py-1 font-semibold">
+                                        1980s - 1992</div>
+                                </div>
+                                <p class="text-gray-600">The journey began in the 1980s, when two brothers, driven by
+                                    courage, motivation and entrepreneurship, founded a business model that in 1992
+                                    became Coelhos Têxteis – Comércio e Indústria, Lda.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Expansion -->
+                    <div class="mb-12 max-w-2xl mr-auto">
+                        <div
+                            class="absolute -left-[3.6rem] top-17 w-12 h-12 p-3 bg-[#1E2E4E] items-center justify-center rounded-full">
+                            <img src="Images/About-Us/Svg's/On Front Lines/SVG2.png" alt="">
+                        </div>
+                        <div class="flex items-start space-x-4 shadow-lg rounded-md p-5">
+                            <div class="flex-1">
+                                <div class="flex justify-between mb-5 items-center">
+                                    <h3 class="text-xl font-bold text-[#1E2E4E]">Expansion</h3>
+                                    <div
+                                        class="text-md text-[#101B32] bg-gray-200 rounded-full px-3 py-1 font-semibold">
+                                        1992 - 2000s</div>
+                                </div>
+                                <p class="text-gray-600">Initially focused on workwear and home textiles, the company
+                                    soon adapted to market needs and added PPE commercialization to its scope.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rebranding & Growth -->
+                    <div class="mb-12 max-w-2xl ml-auto">
+                        <div
+                            class="absolute -left-[3.6rem] top-17 w-12 h-12 p-3 bg-[#1E2E4E] items-center justify-center rounded-full">
+                            <img src="Images/About-Us/Svg's/On Front Lines/SVG3.png" alt="">
+                        </div>
+                        <div class="flex items-start space-x-4 shadow-lg rounded-md p-5">
+                            <div class="flex-1">
+                                <div class="flex justify-between mb-5 items-center">
+                                    <h3 class="text-xl font-bold text-[#1E2E4E]">Rebranding & Growth</h3>
+                                    <div
+                                        class="text-sm text-[#101B32] bg-gray-200 rounded-full px-3 py-1 font-semibold">
+                                        2019</div>
+                                </div>
+                                <p class="text-gray-600">Since then, the company has continuously grown and innovated.
+                                    In 2019, we officially became CLS Brands, Ltd., reflecting our vision and strategy
+                                    for past, present and future.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Today & Future -->
+                    <div class="max-w-3xl ml-auto">
+                        <div
+                            class="absolute -left-[3.6rem] top-17 w-12 h-12 p-3 bg-[#1E2E4E] items-center justify-center rounded-full">
+                            <img src="Images/About-Us/Svg's/On Front Lines/SVG4.png" alt="">
+                        </div>
+                        <div class="flex items-start space-x-4 shadow-lg rounded-md p-5">
+                            <div class="flex-1">
+                                <div class="flex justify-between mb-5 items-center">
+                                    <h3 class="text-xl font-bold text-[#1E2E4E]">Today & Future Facility</h3>
+                                    <span
+                                        class="text-sm text-[#101B32] bg-gray-200 rounded-full px-3 py-1 font-semibold">2024
+                                        & Beyond</span>
+                                </div>
+                                <p class="text-gray-600">Today, we offer a wide range of unique and exclusive products
+                                    tailored to each client’s needs. With the development of a new infrastructure over
+                                    7,000 m² near the A28 highway between Viana do Castelo and Porto, our new facility
+                                    will make CLS one of the largest safety & PPE warehouses & showrooms in the Iberian
+                                    Peninsula.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-5 my-12 py-12 flex flex-col justify-center items-center bg-[#1E2E4E]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">Business Model & Services</h2>
+                <p class="text-xl text-gray-400 mt-4">Comprehensive solutions tailored to different market segments</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Service Card 1: Wholesale Distributors -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/Business Models/SVG.png" alt="">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Wholesale Distributors (Resellers)</h3>
+                    <p class="text-gray-600">We partner with commercial companies, providing them with our logistics and
+                        expertise so they can offer PPE solutions + technical support to their customers.</p>
+                </div>
+
+                <!-- Service Card 2: Mass Retail -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/Business Models/SVG2.png" alt="">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Mass Retail (DIY / Self-Service Distribution)
+                    </h3>
+                    <p class="text-gray-600">We enable large retail chains to integrate a dedicated area for PPE. We
+                        develop
+                        kits and blister packs combining various PPE items, with clear packaging and user instructions
+                        to
+                        simplify non-professional selection.</p>
+                </div>
+
+                <!-- Service Card 3: Industry (HR/HSE) -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/Business Models/SVG3.png" alt="">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Industry (HR / HSE)</h3>
+                    <p class="text-gray-600">We assist Hygiene & Safety departments with risk analysis, share our
+                        know-how,
+                        and test equipment until we find solutions that maximize safety, without compromising comfort or
+                        quality.</p>
+                </div>
+
+                <!-- Service Card 4: Brand Representation -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/Business Models/SVG4.png" alt="">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Brand Representation & Distribution</h3>
+                    <p class="text-gray-600">We also represent and distribute high-prestige third-party brands,
+                        sometimes in
+                        exclusive partnership.</p>
+                </div>
+
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-[white] p-8 rounded-xl shadow-lg flex flex-col">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4 text-center">Why Choose US</h3>
+                    <div class="flex items-center">
+                        <ul class="list-disc list-inside text-gray-600 space-y-2 mr-28">
+                            <li>Quality & Innovation</li>
+                            <li>Customization & Flexibility</li>
+                        </ul>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>End-to-End Support</li>
+                            <li>Logistics & Supply Chain Strength</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600"></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="container mx-auto px-5 py-10 flex flex-col justify-center items-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#1E2E4E]">Expert Team & Certifications</h2>
+                <p class="text-xl text-gray-400 mt-4">Experience, expertise, and recognized excellence</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+
+                <div class="bg-white p-8 rounded-lg border-[1px] shadow-md w-[515px] h-[411px]">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/Expert Team/SVG.png" alt="">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Our Team</h3>
+                    <p class="text-gray-600 mb-3">With over 20 years of experience, our technical sales team is
+                        ready to respond to every need and challenge your company
+                        presents.</p>
+                    <p class="text-gray-600">Talk to us — we advise on the best materials for your sector.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg border-[1px] shadow-md w-[515px] h-[411px]">
+                    <div class="text-3xl mb-3 bg-gray-300 p-3 rounded-md inline-block"><img
+                            src="Images/About-Us/Svg's/Expert Team/SVG2.png" alt="">
+                    </div>
+                    <h3 class="text-xl font-semibold text-[#1E2E4E] mb-4">Certifications & Recognition</h3>
+                    <div class="flex justify-center items-center mb-6">
+                        <div class="w-64">
+                            <img src="Images/About-Us/Svg's/Expert Team/image.png" alt="" class="w-full">
+                        </div>
+                        <div>
+                            <h3 class="text-md font-semibold text-[#1E2E4E] mb-2">SME Excellence (PME Excelência)</h3>
+                            <p class="text-gray-600 text-[0.8rem]">A quality-management model focusing on the efficiency
+                                of
+                                business processes. CLS Brands is one of around 3,000
+                                Portuguese companies (among 300,000) to hold this status.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <div class="w-64">
+                            <img src="Images/About-Us/Svg's/Expert Team/image2.png" alt="" class="w-full">
+                        </div>
+                        <div>
+                            <h3 class="text-md font-semibold text-[#1E2E4E] mb-2">SGS ISO 9001:2015 Certification</h3>
+                            <p class="text-gray-600 text-[0.8rem]">Certified for 6 consecutive years by SGS Portugal,
+                                reflecting our
+                                ongoing commitment to quality in services, customer satisfaction,
+                                employee well-being, and partner relationships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-5 py-10 bg-[url(images/About-Us/Brands.png)] bg-cover bg-center flex flex-col justify-center items-center">
+        <div class="max-w-6xl mx-auto px-6">
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b1a36] text-gray-300 pt-16 pb-4 rounded-t-[50px]">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-12">
+
+            <!-- Left Section -->
+            <div class="space-y-4 md:col-span-2 lg:col-span-2">
+                <img src="Images/Logo/CLS White Logo.png" alt="CLS Logo" class="w-86">
+
+                <p class="text-sm leading-relaxed">
+                    Leading supplier of professional PPE and safety equipment for industrial and corporate clients
+                    worldwide.
+                </p>
+
+                <!-- Contact Info -->
+                <div class="mt-6">
+                    <h3 class="text-white font-semibold text-lg mb-6">CONTACT INFORMATION</h3>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i> +1 (234) 567-890
+                        </li>
+
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope"></i> info@cls.com
+                        </li>
+
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot mt-1"></i>
+                            <span>123 Industrial Ave, City, Country</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sponsors -->
+                <div class="mt-3">
+                    <h3 class="text-white font-semibold text-lg mb-6">MAIN SPONSOR</h3>
+
+                    <div class="flex items-center space-x-4">
+                        <img src="Images/Footer/image 1.png" class="w-[79px] object-contain">
+                        <img src="Images/Footer/image 2.png" class="w-[79px] object-contain">
+                        <img src="Images/Footer/image 3.png" class="w-[79px] object-contain">
+                    </div>
+
+                    <div class="mt-6">
+                        <img src="Images/Footer/Group.png" class="w-[406px]">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Links Section -->
+            <div class="md:col-span-2 grid grid-cols-2 items-start">
+                <!-- Company -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-3">Company</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Our History</a></li>
+                        <li><a href="#" class="hover:text-white">Sustainability</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Become a Distributor</a></li>
+                        <li><a href="#" class="hover:text-white">Our Partners</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-3">Resources</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="#" class="hover:text-white">Download Catalogues</a></li>
+                        <li><a href="#" class="hover:text-white">Safety Standards</a></li>
+                        <li><a href="#" class="hover:text-white">Certificates</a></li>
+                        <li><a href="#" class="hover:text-white">Technical Sheets</a></li>
+                        <li><a href="#" class="hover:text-white">Selection Guides</a></li>
+                        <li><a href="#" class="hover:text-white">Blog & News</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-3">Products</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="#" class="hover:text-white">Safety Footwear</a></li>
+                        <li><a href="#" class="hover:text-white">Safety Gloves</a></li>
+                        <li><a href="#" class="hover:text-white">Workwear</a></li>
+                        <li><a href="#" class="hover:text-white">PPE Equipment</a></li>
+                        <li><a href="#" class="hover:text-white">Accessories</a></li>
+                        <li><a href="#" class="hover:text-white">New Arrivals</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-3">Support</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Login / Register</a></li>
+                        <li><a href="#" class="hover:text-white">My Wishlist</a></li>
+                        <li><a href="#" class="hover:text-white">My Quotes</a></li>
+                        <li><a href="#" class="hover:text-white">Shopping Info</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Newsletter -->
+            <div class="md:col-span-2 lg:col-span-2">
+                <h3 class="text-white text-lg font-semibold mb-3">Newsletter</h3>
+                <p class="text-sm mb-4">Get updates on new products and special offers.</p>
+
+                <form class="flex-col space-y-3 w-full">
+                    <input type="email" placeholder="Your Email"
+                        class="w-full px-4 py-2 rounded text-gray-800 focus:outline-none">
+                    <button
+                        class="bg-red-600 w-full px-5 py-2 rounded text-white font-medium hover:bg-red-500 transition">
+                        Subscribe
+                    </button>
+                </form>
+
+                <!-- Social Icons -->
+                <div class="flex space-x-2 mt-5">
+                    <a href="#"
+                        class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"><i
+                            class="fa-brands fa-facebook-f text-[#0b1a36]"></i></a>
+                    <a href="#"
+                        class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"><i
+                            class="fa-brands fa-linkedin-in text-[#0b1a36]"></i></a>
+                    <a href="#"
+                        class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"><i
+                            class="fa-brands fa-twitter text-[#0b1a36]"></i></a>
+                    <a href="#"
+                        class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"><i
+                            class="fa-brands fa-instagram text-[#0b1a36]"></i></a>
+                </div>
+
+                <!-- QUICK LINKS -->
+                <div class="mt-8">
+                    <h3 class="text-white text-lg font-semibold mb-3">Quick Links</h3>
+
+                    <div class="grid grid-cols-2 gap-8 items-start">
+
+                        <div class="flex-col">
+                            <div>
+                                <a href="#" class="text-white text-sm font-semibold underline">Footwear</a>
+                                <ul class="text-[0.45rem] list-disc ml-4">
+                                    <li>Protective Footwear</li>
+                                    <li>Womens Footwear</li>
+                                    <li>ESD / HRO / Military</li>
+                                    <li>Steel / Composite / Fiberglass</li>
+                                    <li>PVC, PU & EVA Footwear</li>
+                                    <li>Accessories</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <a href="#" class="text-white text-sm font-semibold underline">Gloves</a>
+                                <ul class="text-[0.45rem] list-disc ml-4">
+                                    <li>Protective & Multipurpose</li>
+                                    <li>Anti-cut / Thermal / Chemical</li>
+                                    <li>Leather / Welding</li>
+                                    <li>Disposable / Antistatic</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <a href="#" class="text-white text-sm font-semibold underline">Clothing</a>
+                                <ul class="text-[0.45rem] list-disc ml-4">
+                                    <li>Workwear</li>
+                                    <li>Fire Retardant</li>
+                                    <li>Thermal / Outerwear</li>
+                                    <li>Disposable Wear</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex-col">
+                            <div>
+                                <a href="#" class="text-white text-sm font-semibold underline">Signage & Safety</a>
+                                <ul class="text-[0.45rem] list-disc ml-4">
+                                    <li>Traffic Signs</li>
+                                    <li>Fire Signs</li>
+                                    <li>Information Signs</li>
+                                    <li>Barriers & Cones</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <a href="#" class="text-white text-sm font-semibold underline">Protection Equipment</a>
+                                <ul class="text-[0.45rem] list-disc ml-4">
+                                    <li>Fall Protection</li>
+                                    <li>Hearing Protection</li>
+                                    <li>Eye & Face</li>
+                                    <li>Respiratory</li>
+                                    <li>Head Protection</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <a href="#" class="text-white text-xs font-semibold underline">Other Safety Products</a>
+                                <ul class="text-[0.45rem] list-disc ml-4">
+                                    <li>Firefighting / First Aid</li>
+                                    <li>Lifting Straps</li>
+                                    <li>Eye Wash Stations</li>
+                                    <li>DIY / Merchandising</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10 mt-6 pt-4 px-6">
+            <div
+                class="max-w-7xl mx-auto flex flex-col sm:flex-row text-center sm:text-left items-center justify-between text-xs text-gray-400">
+
+                <p class="text-white mb-3 sm:mb-0">
+                    © 2025 CLS.PT. All rights reserved. |
+                    <a href="https://thesocialnexus.org/" class="text-white">Made by 🤍 TSN</a>
+                </p>
+
+                <img src="Images/Footer/bottom footer brands.png" class="w-40 sm:w-auto">
+
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                    <a href="#" class="hover:text-white">Cookie Policy</a>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const langBtn = document.getElementById('lang-btn');
+        const langMenu = document.getElementById('lang-menu');
+
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        langBtn.addEventListener('click', () => langMenu.classList.toggle('hidden'));
+
+        document.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) langMenu.classList.add('hidden');
+        });
+    </script>
+</body>
+
+</html>

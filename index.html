@@ -3,154 +3,1350 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Tailwind CDN -->
+    <title>CLS Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Font Awesome CDN -->
-    <script
-      src="https://kit.fontawesome.com/7a6c312ccb.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- LUCIDE ICONS -->
-    <!-- Development version -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <!-- Production version -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <title>Document</title>
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body>
-    <header>
+
+  <body class="text-gray-800">
+    <!-- Top Bar -->
+    <div
+      class="bg-[radial-gradient(circle_at_top_center,#1E2E4E,#101B32)] text-white text-sm"
+    >
       <div
-        class="bg-[#172444] flex text-white text-sm px-16 py-3 justify-between"
+        class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 py-2 gap-2"
       >
-        <div class="flex gap-3 justify-center items-center">
-          <a href="tel:+351258320300" class="flex items-center gap-2">
-            <i data-lucide="phone" class="w-4 h-4 text-white inline-block"></i>
-            +351 258 320 300
-          </a>
-          <a href="mailto:geral@cls.pt" class="flex items-center gap-2">
-            <i data-lucide="mail" class="w-4 h-4 text-white inline-block"></i>
-            geral@cls.pt
-          </a>
+        <!-- Left -->
+        <div
+          class="flex flex-wrap items-center justify-center md:justify-start space-x-4"
+        >
+          <span><i class="fa-solid fa-phone mr-2"></i>+351 258 320 300</span>
+          <span><i class="fa-regular fa-envelope mr-2"></i>geral@cls.pt</span>
         </div>
-        <div class="flex gap-3 justify-center items-center">
-          <span>Certified PPE Solutions for professionals</span>
-          <span class="flex gap-2 items-center">
-            <i data-lucide="globe" class="w-4 h-4 text-white inline-block"></i>
-            PT
-            <i
-              data-lucide="chevron-down"
-              class="w-4 h-4 text-white inline-block"
-            ></i>
-          </span>
-          <span class="flex gap-2 items-center">
-            <a href="login.html"  class="flex gap-2 items-center"
-              ><i
-                data-lucide="user"
-                class="w-4 h-4 text-white inline-block"
-              ></i>
-              To Enter</a
+
+        <!-- Right -->
+        <div
+          class="flex flex-wrap items-center justify-center md:justify-end space-x-4"
+        >
+          <span class="hidden sm:block"
+            >Certified PPE solutions for professionals</span
+          >
+
+          <!-- Language Dropdown -->
+          <div class="relative">
+            <button
+              id="lang-btn"
+              class="flex items-center space-x-1 hover:text-indigo-400 focus:outline-none"
             >
-          </span>
+              <i class="fa-solid fa-globe"></i>
+              <span>PT</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+            <div
+              id="lang-menu"
+              class="hidden absolute right-0 mt-2 w-36 rounded-md bg-white text-gray-800 shadow-md ring-1 ring-black/5 z-50"
+            >
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-indigo-100"
+                >PT - Português</a
+              >
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-indigo-100"
+                >EN - English</a
+              >
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-indigo-100"
+                >ES - Español</a
+              >
+            </div>
+          </div>
+
+          <!-- Login -->
+          <a href="login.html" class="flex items-center hover:text-indigo-400">
+            <i class="fa-regular fa-user mr-1"></i> To Enter
+          </a>
         </div>
       </div>
-      <div class="bg-white flex text-sm px-16 py-3 justify-between">
-        <div>
-          <img src="assets/logo on header.png" alt="" />
-        </div>
-        <div class="flex justify-between gap-4">
-          <div class="flex gap-3 justify-between items-center">
-            <a href="#">Products</a>
-            <a href="#">Enterprise</a>
-            <a href="#">Catalogues</a>
-            <a href="#">Technical Info</a>
-            <a href="#">Help</a>
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-4">
-          <input
-            type="search"
-            name=""
-            id=""
-            placeholder="Search Products..."
-            class="px-2 py-2 bg-[#f1f5f9] rounded-md border border-grey-500 w-15"
+    </div>
+
+    <!-- Main Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center">
+          <img
+            src="Images/Logo/Cls Logo.png"
+            alt="CLS Logo"
+            class="h-10 w-auto"
           />
-          <i data-lucide="heart" class="w-4 h-4 inline-block"></i>
-          <i data-lucide="shopping-cart" class="w-4 h-4 inline-block"></i>
-          <button class="bg-[#121e37] rounded-md text-white text-sm px-5 py-2">
-            Request Quote
+        </a>
+
+        <!-- Nav Links -->
+        <nav
+          class="hidden lg:flex items-center space-x-8 font-medium text-gray-700"
+        >
+          <a href="#" class="hover:text-indigo-600">Products</a>
+          <a href="#" class="hover:text-indigo-600">Enterprise</a>
+          <a href="#" class="hover:text-indigo-600">Catalogues</a>
+          <a href="#" class="hover:text-indigo-600">Technical Info</a>
+          <a href="#" class="hover:text-indigo-600">Help</a>
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="hidden lg:flex items-center space-x-4">
+          <!-- Search -->
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search products..."
+              class="w-56 border rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass absolute right-3 top-2 text-gray-400"
+            ></i>
+          </div>
+
+          <!-- Wishlist -->
+          <button class="relative text-gray-600 hover:text-indigo-600">
+            <i class="fa-regular fa-heart text-xl"></i>
+            <span
+              class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold rounded-full w-4 h-4 flex items-center justify-center"
+              >2</span
+            >
           </button>
+
+          <!-- Cart -->
+          <button class="relative text-gray-600 hover:text-indigo-600">
+            <i class="fa-solid fa-cart-shopping text-xl"></i>
+            <span
+              class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold rounded-full w-4 h-4 flex items-center justify-center"
+              >2</span
+            >
+          </button>
+
+          <!-- Request Quote -->
+          <a
+            href="#"
+            class="bg-[#1E2E4E] hover:bg-[#243a63] text-white text-sm font-semibold px-4 py-2 rounded-md"
+          >
+            Request Quote
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button
+          id="menu-btn"
+          class="lg:hidden text-gray-700 focus:outline-none"
+        >
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden bg-gray-100 text-gray-800 lg:hidden">
+        <a href="#" class="block px-6 py-2 hover:bg-gray-200">Products</a>
+        <a href="#" class="block px-6 py-2 hover:bg-gray-200">Enterprise</a>
+        <a href="#" class="block px-6 py-2 hover:bg-gray-200">Catalogues</a>
+        <a href="#" class="block px-6 py-2 hover:bg-gray-200">Technical Info</a>
+        <a href="#" class="block px-6 py-2 hover:bg-gray-200">Help</a>
+        <div class="border-t border-gray-300 my-2"></div>
+        <div class="px-6 py-3 space-y-2">
+          <input
+            type="text"
+            placeholder="Search products..."
+            class="w-full border rounded-md px-3 py-2 text-sm"
+          />
+          <a href="#" class="block text-indigo-600 font-semibold"
+            >Request Quote</a
+          >
         </div>
       </div>
     </header>
 
-    <section class="relative h-full">
-      <img src="assets/hero.png" alt="" class="w-full h-full object-cover" />
+    <!-- Hero Section -->
+    <section class="relative bg-white overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="Images/Home Images/hero-image.png"
+          alt="Construction background"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-[#132039B2]/90"></div>
+      </div>
+
       <div
-        class="absolute inset-0 bg-gradient-to-b from-[#090d15]/[0.95] to-[#132039]/[0.7]"
-      ></div>
-      <div class="absolute inset-0 flex items-center justify-between px-16">
-        <div class="w-[45%] flex flex-col justify-between gap-5">
+        class="relative container mx-auto px-6 py-24 lg:py-32 flex flex-col lg:flex-row items-center gap-12"
+      >
+        <!-- Left Content -->
+        <div class="text-white lg:w-1/2">
           <span
-            class="text-sm px-3 py-1 text-white bg-gray-600 bg-opacity-50 backdrop-blur-sm rounded-full max-content"
+            class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block"
           >
             Certified Safety Solutions
           </span>
-          <h1 class="text-white text-5xl font-bold">
-            Professional PPE & Workwear Solutions for Every Industry
+
+          <h1
+            class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+          >
+            Professional PPE & Workwear Solutions<br class="hidden md:block" />
+            for Every Industry
           </h1>
-          <p class="text-white text-sm font-[5rem]">
+
+          <p class="text-gray-200 text-base md:text-lg mb-8 max-w-lg">
             Certified safety gear and workwear designed for comfort,
             performance, and compliance. Trusted by industrial leaders
             worldwide.
           </p>
-          <div class="flex gap-3">
-            <button
-              class="flex gap-3 justify-between items-center bg-red-800 text-white rounded-md text-sm px-3 py-1"
+
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#"
+              class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-md"
             >
-              <span> Request a Quote </span>
-              <i data-lucide="arrow-right" class="w-4 h-4 inline-block"></i>
-            </button>
-            <button
-              class="flex gap-3 justify-between items-center bg-white rounded-md text-sm px-4 py-2"
+              Request a Quote
+            </a>
+            <a
+              href="#"
+              class="border border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-6 py-3 rounded-md transition"
             >
-              <i data-lucide="download" class="w-4 h-4 inline-block"></i>
-              <span>View Catalogues</span>
-            </button>
+              View Catalogues
+            </a>
           </div>
-          <div class="text-sm text-white">
-            <ul class="flex gap-4 text-[0.7rem] list-disc list-inside">
-              <li>ISO 9001 Certified</li>
-              <li>EN Standards Complient</li>
-              <li>Global Distribution</li>
-            </ul>
+
+          <div
+            class="flex flex-wrap items-center gap-4 text-gray-300 text-sm mt-8"
+          >
+            <span class="flex items-center gap-2"
+              ><i class="fa-solid fa-shield-halved"></i> ISO 9001
+              Certified</span
+            >
+            <span class="flex items-center gap-2"
+              ><i class="fa-solid fa-certificate"></i> EN Standards</span
+            >
+            <span class="flex items-center gap-2"
+              ><i class="fa-solid fa-globe"></i> Global Distribution</span
+            >
           </div>
         </div>
-        <div class="w-[45%]">
-          <img src="assets/user in green.png" alt="" class="rounded-md" />
+
+        <!-- Right Image -->
+        <div class="lg:w-1/2 relative flex justify-center">
+          <img
+            src="Images/Home Images/person-image.png"
+            alt="Worker PPE"
+            class="rounded shadow-xl object-cover w-full max-w-xl"
+          />
+          <div
+            class="absolute -bottom-6 -left-4 p-3 text-sm w-60 rounded bg-white/60 border border-white/30 shadow backdrop-blur-md"
+          >
+            <p>For Wear</p>
+            <p class="font-semibold text-gray-900">
+              ONE BRAND, CLS-BRANDS, LDA
+            </p>
+            <a href="#" class="text-black font-semibold text-xs underline"
+              >Know More →</a
+            >
+          </div>
         </div>
-      </div>
-      <div
-        class="absolute right-[30%] bottom-[10%] bg-gray-500/50 backdrop-blur-sm p-4 rounded-lg max-w-xs border border-lightgrey-500"
-      >
-        <small class="block text-[0.6rem]">For Wear</small>
-        <h3 class="text-[0.8rem] font-bold mb-1">ONE BRAND, CLS-BRANDS, LDA</h3>
-        <button class="underline text-[0.7rem] font-semibold">Know More</button>
       </div>
     </section>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <section
+      class="container mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
+    >
+      <!-- Card 1 -->
+      <div
+        class="flex flex-col items-center space-y-3 bg-white shadow-[3px_7px_8px_3px_#0000003B] rounded-lg p-6"
+      >
+        <div
+          class="w-12 h-12 p-5 rounded-full items-center justify-center flex bg-[#101B32]"
+        >
+          <i class="fa-solid fa-bolt bg-[#101B32] text-white text-sm"></i>
+        </div>
+        <h3 class="text-[#1E2E4E] font-bold text-lg">Fast Quote Response</h3>
+        <p class="text-[#1E2E4E] text-sm">Get Your Quote within 24 Hours</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="flex flex-col items-center space-y-3 bg-white shadow-[3px_7px_8px_3px_#0000003B] rounded-lg p-6"
+      >
+        <div
+          class="w-12 h-12 p-5 rounded-full items-center justify-center flex bg-[#101B32]"
+        >
+          <i class="fa-solid fa-shield bg-[#101B32] text-white text-sm"></i>
+        </div>
+        <h3 class="text-[#1E2E4E] font-bold text-lg">Certified Safety Gear</h3>
+        <p class="text-[#1E2E4E] text-sm">
+          All products meet international standards
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="flex flex-col items-center space-y-3 bg-white shadow-[3px_7px_8px_3px_#0000003B] rounded-lg p-6"
+      >
+        <div
+          class="w-12 h-12 p-5 rounded-full items-center justify-center flex bg-[#101B32]"
+        >
+          <i class="fa-solid fa-leaf bg-[#101B32] text-white text-sm"></i>
+        </div>
+        <h3 class="text-[#1E2E4E] font-bold text-lg">
+          Sustainable Manufacturing
+        </h3>
+        <p class="text-[#1E2E4E] text-sm">Eco-friendly production processes</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div
+        class="flex flex-col items-center space-y-3 bg-white shadow-[3px_7px_8px_3px_#0000003B] rounded-lg p-6"
+      >
+        <div
+          class="w-12 h-12 p-5 rounded-full items-center justify-center flex bg-[#101B32]"
+        >
+          <i class="fa-solid fa-globe bg-[#101B32] text-white text-sm"></i>
+        </div>
+        <h3 class="text-[#1E2E4E] font-bold text-lg">Global Distribution</h3>
+        <p class="text-[#1E2E4E] text-sm">Worldwide shipping available</p>
+      </div>
+    </section>
+
+    <section
+      class="flex flex-col lg:flex-row container mx-auto min-h-screen justify-center items-center p-6 gap-8"
+    >
+      <!-- Sidebar -->
+      <aside
+        class="w-full lg:w-64 bg-white shadow-[-2px_4px_20px_0px_#00000040] rounded-lg p-4"
+      >
+        <div class="flex items-center gap-3 mb-6">
+          <i
+            class="fa-solid fa-tag rounded-full text-[#101B32] text-[1rem]"
+          ></i>
+          <div>
+            <h2 class="text-lg font-semibold flex items-center gap-2">
+              Browse by Category
+            </h2>
+            <p class="text-[0.7rem] text-gray-500">
+              Discover content that matches your interests
+            </p>
+          </div>
+        </div>
+        <ul class="space-y-1">
+          <li>
+            <button
+              class="w-full text-left px-5 py-2 mb-3 bg-gradient-to-b from-[#1A2238] to-[#0B1320] text-white font-semibold rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.25)] hover:from-[#1F2A45] hover:to-[#111A2D] transition-all duration-200"
+            >
+              All Categories
+            </button>
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-2 rounded hover:bg-gray-100"
+              >Safety Footwear</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+              >Protective Gloves</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+              >Eye & Face Protection</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+              >Respiratory Protection</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+              >Hearing Protection</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+              >Head Protection</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+              >Safety Clothing</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+              >Fall Protection</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+              >Other Products</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+              >Signposting</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-1 rounded hover:bg-gray-100"
+              >Disposables</a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1">
+        <div
+          class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4"
+        >
+          <div>
+            <h1 class="text-2xl font-bold">Featured Products</h1>
+            <p class="text-sm text-gray-500">
+              Popular choices trusted by industry professionals
+            </p>
+          </div>
+          <button
+            class="px-4 py-2 bg-transparent text-[#101B32] border-[2px] border-gray-300 rounded hover:bg-[#0B1320] hover:text-white hover:border-[#0B1320] transition-all duration-200"
+          >
+            View All Products
+          </button>
+        </div>
+
+        <!-- Products Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-2"
+        >
+          <!-- Product Card -->
+          <div
+            class="bg-white w-[300px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <img
+              src="Images/Logo/Original.png"
+              alt=""
+              class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+            />
+            <i
+              class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+            ></i>
+            <div class="relative mt-8">
+              <img
+                src="Images/Products/1.png"
+                alt="Product Image"
+                class="mb-3 w-full object-contain"
+              />
+              <p
+                class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+              >
+                CODE: 0250645
+              </p>
+            </div>
+            <p class="text-gray-400 font-semibold">For Walk</p>
+            <h3 class="text-base font-semibold">
+              New Kampala S1P Composite PU ESD
+            </h3>
+            <p class="text-sm text-gray-400">S1P SRC ESD</p>
+            <button
+              class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+            >
+              <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to Cart
+            </button>
+          </div>
+
+          <!-- Product Card -->
+          <div
+            class="bg-white w-[300px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <img
+              src="Images/Logo/Original.png"
+              alt=""
+              class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+            />
+            <i
+              class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+            ></i>
+            <div class="relative mt-8">
+              <img
+                src="Images/Products/2.png"
+                alt="Product Image"
+                class="mb-3 w-full object-contain"
+              />
+              <p
+                class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+              >
+                CODE: 0250646
+              </p>
+            </div>
+            <p class="text-gray-400 font-semibold">For Walk</p>
+            <h3 class="text-base font-semibold">
+              New Kampala S1P Composite PU ESD Gloves
+            </h3>
+            <p class="text-sm text-gray-400">S1P SRC ESD</p>
+            <button
+              class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+            >
+              <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to Cart
+            </button>
+          </div>
+
+          <!-- Product Card -->
+          <div
+            class="bg-white w-[300px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <img
+              src="Images/Logo/Original.png"
+              alt=""
+              class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+            />
+            <i
+              class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+            ></i>
+            <div class="relative mt-8">
+              <img
+                src="Images/Products/3.png"
+                alt="Product Image"
+                class="mb-3 w-full object-contain"
+              />
+              <p
+                class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+              >
+                CODE: 0712056
+              </p>
+            </div>
+            <p class="text-gray-400 font-semibold">For Walk</p>
+            <h3 class="text-base font-semibold">
+              New Kampala S1P Composite PU ESD Jacket
+            </h3>
+            <p class="text-sm text-gray-400">S1P SRC ESD</p>
+            <button
+              class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+            >
+              <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- Why Choose CLS -->
+    <section
+      class="container mx-auto px-6 py-12 flex flex-col lg:flex-row items-center gap-12"
+    >
+      <div class="lg:w-1/2 space-y-2">
+        <h2 class="text-[#101B32] text-4xl md:text-5xl font-bold">
+          Why Choose CLS.PT
+        </h2>
+        <p class="text-gray-500">
+          We’re more than just a supplier — we’re your partner in building
+          excellence. Our commitment to quality and service sets us apart.
+        </p>
+
+        <div class="flex items-start gap-4 bg-white p-4 rounded-md max-w-md">
+          <div class="bg-gray-200 text-black p-3 rounded-md">
+            <i class="fa-solid fa-shield text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-[#1E2E4E]">
+              Trusted by Professionals
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Over 10 years serving the construction industry with premium
+              quality products
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white p-4 rounded-md max-w-md">
+          <div class="bg-gray-200 text-black p-3 rounded-md">
+            <i class="fa-solid fa-truck text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-[#1E2E4E]">
+              Fast Nationwide Delivery
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Expert shipping options available with real-time tracking
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white p-4 rounded-md max-w-md">
+          <div class="bg-gray-200 text-black p-3 rounded-md">
+            <i class="fa-solid fa-box-open text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-[#1E2E4E]">
+              Top-Tier Produtct Range
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Curated selections from the world's leading brands
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white p-4 rounded-md max-w-md">
+          <div class="bg-gray-200 text-black p-3 rounded-md">
+            <i class="fa-solid fa-headphones text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-[#1E2E4E]">
+              Expert Support 24/7
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Professional guidance and customer service whenever you need it
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:w-1/2 relative">
+        <img
+          src="Images/Home Images/Why choose.png"
+          alt=""
+          class="rounded object-cover w-full h-64 sm:h-80 md:h-96"
+        />
+        <div
+          class="absolute -bottom-6 -left-4 p-3 text-sm w-60 rounded bg-white/60 border border-white/30 shadow-xl backdrop-blur-md uppercase"
+        >
+          <p>CLS Brand, LDA.</p>
+          <p class="font-semibold text-gray-900">Equipa & Recrutamento</p>
+          <a href="#" class="text-black font-semibold text-xs underline"
+            >View Page →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted Brands -->
+    <section
+      class="container text-center mx-auto px-5 py-12 flex flex-col justify-center items-center gap-8"
+    >
+      <div class="space-y-2">
+        <h2 class="text-[#101B32] text-4xl md:text-5xl font-bold">
+          Trusted Brands
+        </h2>
+        <p class="text-gray-500">
+          We partner with the world's leading manufacturers to bring you the
+          best
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center items-center gap-[2rem] mt-8">
+        <img
+          src="Images/Trusted Brands/169b1870f3d7cd1699663e464e74b426eaaaf125.png"
+          alt="Brand 1"
+          class="h-12 object-contain w-[10rem]"
+        />
+        <img
+          src="Images/Trusted Brands/1f9102f83af819c83e96b928418293188f41168c.png"
+          alt="Brand 2"
+          class="h-12 object-contain w-[10rem]"
+        />
+        <img
+          src="Images/Trusted Brands/2ec7ca558d45d1e8ef60bb6441b56e10902f5527.png"
+          alt="Brand 3"
+          class="h-12 object-contain w-[10rem]"
+        />
+        <img
+          src="Images/Trusted Brands/849bca692eae522db9436336fec4d9dec2a20f3d.png"
+          alt="Brand 4"
+          class="h-12 object-contain w-[10rem]"
+        />
+        <img
+          src="Images/Trusted Brands/8ce85f0c5aa738101ef63a48b51831d9a3a7a229.png"
+          alt="Brand 5"
+          class="h-12 object-contain w-[10rem]"
+        />
+        <img
+          src="Images/Trusted Brands/cbcd6ce5dfc65a0db321487a8f56a8827426da9a.png"
+          alt="Brand 6"
+          class="h-12 object-contain w-[10rem]"
+        />
+      </div>
+    </section>
+
+    <section
+      class="container mx-auto px-5 py-12 flex flex-col justify-center items-center"
+    >
+      <div class="flex flex-col md:flex-row gap-6 p-6 max-w-6xl">
+        <!-- Left Card -->
+        <div
+          class="flex-1 bg-[#1E2E4E0D]/5 backdrop-blur-[2px] shadow-md rounded-xl border border-gray-200 p-8 relative"
+        >
+          <!-- Icon -->
+          <div
+            class="w-10 h-10 bg-[#101B32] rounded-lg flex items-center justify-center mb-4"
+          >
+            <i class="fa-regular fa-file-lines text-white"></i>
+          </div>
+
+          <h2 class="text-xl font-semibold text-gray-900 mb-2">
+            View Our Latest Catalogues
+          </h2>
+          <p class="text-gray-600 text-sm mb-4">
+            Browse our complete range of certified safety equipment. Detailed
+            specifications, certifications, and technical information.
+          </p>
+
+          <ol
+            class="text-gray-700 text-sm mb-6 space-y-1 list-disc list-inside"
+          >
+            <li>Complete product range</li>
+            <li>Technical specifications</li>
+            <li>Certification details</li>
+          </ol>
+
+          <button
+            class="bg-[#101B32] text-white text-sm px-5 py-2 rounded-md hover:bg-[#101B32]/80 transition"
+          >
+            View Catalogues
+          </button>
+
+          <!-- Floating Images (optional placeholder) -->
+          <div class="relavive">
+            <img
+              src="Images/Home Images/image 1.png"
+              alt="Catalogue"
+              class="w-[200px] h-[270] rotate-[12deg] absolute bottom-3 right-[3rem] transform translate-y-1/3 flex z-10"
+            />
+            <img
+              src="Images/Home Images/image 2.png"
+              alt="Catalogue"
+              class="w-[200px] h-[270] rotate-[12deg] absolute bottom-6 -right-6 transform translate-y-1/3 flex"
+            />
+          </div>
+        </div>
+
+        <!-- Right Card -->
+        <div
+          class="flex-1 bg-[#D40D00]/5 backdrop-blur-[2px] shadow-md rounded-xl border border-gray-200 p-8 relative"
+        >
+          <!-- Icon -->
+          <div
+            class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center mb-4"
+          >
+            <i class="fa-solid fa-handshake text-white"></i>
+          </div>
+
+          <h2 class="text-xl font-semibold text-gray-900 mb-2">
+            Become an Authorized Distributor
+          </h2>
+          <p class="text-gray-600 text-sm mb-4">
+            Partner with a trusted leader in safety equipment. Exclusive
+            benefits, competitive margins, and comprehensive support.
+          </p>
+
+          <ol
+            class="text-gray-700 text-sm mb-6 space-y-1 list-disc list-inside"
+          >
+            <li>Exclusive distributor benefits</li>
+            <li>Marketing support & materials</li>
+            <li>Dedicated account manager</li>
+          </ol>
+
+          <button
+            class="bg-red-600 text-white text-sm px-5 py-2 rounded-md hover:bg-red-500 transition"
+          >
+            Partner With Us →
+          </button>
+
+          <!-- Logo (bottom-right) -->
+          <img
+            src="Images/Logo/Original.png"
+            alt="Logo"
+            class="absolute bottom-4 right-4 w-28 opacity-80"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="container mx-auto px-5 py-12 flex flex-col justify-center items-center"
+    >
+      <main class="flex-1">
+        <div
+          class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4"
+        >
+          <div class="flex space-x-6 mx-auto items-center">
+            <h1 class="text-2xl font-bold pr-6 border-r-2">Related Products</h1>
+            <p class="text-xl text-gray-500">Other Featured Products</p>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"
+        >
+          <!-- Product Card -->
+          <div
+            class="bg-white w-[300px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <img
+              src="Images/Logo/Original.png"
+              alt=""
+              class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+            />
+            <i
+              class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+            ></i>
+            <div class="relative mt-8">
+              <img
+                src="Images/Products/1.png"
+                alt="Product Image"
+                class="mb-3 w-full object-contain"
+              />
+              <p
+                class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+              >
+                CODE: 0250645
+              </p>
+            </div>
+            <p class="text-gray-400 font-semibold">For Walk</p>
+            <h3 class="text-base font-semibold">
+              New Kampala S1P Composite PU ESD
+            </h3>
+            <p class="text-sm text-gray-400">S1P SRC ESD</p>
+            <button
+              class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+            >
+              <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to Cart
+            </button>
+          </div>
+
+          <!-- Product Card -->
+          <div
+            class="bg-white w-[300px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <img
+              src="Images/Logo/Original.png"
+              alt=""
+              class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+            />
+            <i
+              class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+            ></i>
+            <div class="relative mt-8">
+              <img
+                src="Images/Products/2.png"
+                alt="Product Image"
+                class="mb-3 w-full object-contain"
+              />
+              <p
+                class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+              >
+                CODE: 0250646
+              </p>
+            </div>
+            <p class="text-gray-400 font-semibold">For Walk</p>
+            <h3 class="text-base font-semibold">
+              New Kampala S1P Composite PU ESD Gloves
+            </h3>
+            <p class="text-sm text-gray-400">S1P SRC ESD</p>
+            <button
+              class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+            >
+              <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to Cart
+            </button>
+          </div>
+
+          <!-- Product Card -->
+          <div
+            class="bg-white w-[300px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <img
+              src="Images/Logo/Original.png"
+              alt=""
+              class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+            />
+            <i
+              class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+            ></i>
+            <div class="relative mt-8">
+              <img
+                src="Images/Products/3.png"
+                alt="Product Image"
+                class="mb-3 w-full object-contain"
+              />
+              <p
+                class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+              >
+                CODE: 0712056
+              </p>
+            </div>
+            <p class="text-gray-400 font-semibold">For Walk</p>
+            <h3 class="text-base font-semibold">
+              New Kampala S1P Composite PU ESD Jacket
+            </h3>
+            <p class="text-sm text-gray-400">S1P SRC ESD</p>
+            <button
+              class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+            >
+              <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to Cart
+            </button>
+          </div>
+
+          <!-- Product Card -->
+          <div
+            class="bg-white w-[300px] border rounded-lg p-4 flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <img
+              src="Images/Logo/Original.png"
+              alt=""
+              class="absolute top-0 left-0 w-[4rem] h-[4rem] z-10"
+            />
+            <i
+              class="fa-regular fa-heart absolute top-2 right-2 z-10 p-2 rounded-full border border-black cursor-pointer hover:bg-gray-100 transition"
+            ></i>
+            <div class="relative mt-8">
+              <img
+                src="Images/Products/4.png"
+                alt="Product Image"
+                class="mb-3 w-full object-contain"
+              />
+              <p
+                class="text-[0.6rem] font-bold text-gray-500 border rounded-lg p-1 absolute bottom-2 left-0 bg-white/80"
+              >
+                CODE: 0712056
+              </p>
+            </div>
+            <p class="text-gray-400 font-semibold">For Walk</p>
+            <h3 class="text-base font-semibold">
+              New Kampala S1P Composite PU ESD Jacket
+            </h3>
+            <p class="text-sm text-gray-400">S1P SRC ESD</p>
+            <button
+              class="mt-3 w-full py-2 bg-[#101B32] text-white rounded hover:bg-[#0B1320] transition"
+            >
+              <i class="fa-solid fa-shopping-cart text-sm mr-2"></i>Add to Cart
+            </button>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <section
+      class="container relative mx-auto px-5 py-12 flex flex-col justify-center items-center"
+    >
+      <img
+        src="Images/Home Images/1224cb47f61299d8d7071664630346a35295e076.png"
+        alt=""
+        class="shadow-lg"
+      />
+    </section>
+
+    <section
+      class="container relative mx-auto px-5 py-12 flex flex-col justify-center items-center"
+    >
+      <div class="space-y-2 text-center">
+        <h2 class="text-[#101B32] text-4xl md:text-5xl font-bold">
+          Industry Insights
+        </h2>
+        <p class="text-gray-500">
+          Expert tips, guides, and updates from the construction world
+        </p>
+      </div>
+
+      <main class="flex-1 my-12">
+        <!-- Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-6"
+        >
+          <!-- Card -->
+          <div
+            class="bg-white hover:text-yellow w-[400px] border rounded-lg flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <div>
+              <div class="relative">
+                <img
+                  src="Images/industry insights/image 1.jpg"
+                  alt="Product Image"
+                  class="mb-3 object-contain"
+                />
+                <div class="absolute inset-0 bg-[#000]/30"></div>
+              </div>
+            </div>
+            <div class="p-4 flex flex-col">
+              <p class="text-gray-400 font-semibold">
+                <i class="fa-solid fa-calendar-days mr-3"></i>March 15,2024
+              </p>
+              <h3 class="text-base font-semibold">
+                10 Essential Power Tools Every Professional Needs
+              </h3>
+              <p class="text-md text-gray-400">
+                Discover the must have power tools that will elevate your
+                construction projects to professional standards.
+              </p>
+              <a href="#" class="mt-3 text-[#101B32] hover:underline">
+                Read More <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="bg-white w-[400px] border rounded-lg flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <div>
+              <div class="relative">
+                <img
+                  src="Images/industry insights/image 2.jpg"
+                  alt="Product Image"
+                  class="mb-3 object-contain"
+                />
+                <div class="absolute inset-0 bg-[#000]/30"></div>
+              </div>
+            </div>
+            <div class="p-4 flex flex-col">
+              <p class="text-gray-400 font-semibold">
+                <i class="fa-solid fa-calendar-days mr-3"></i>March 12,2024
+              </p>
+              <h3 class="text-base font-semibold">
+                Suitable Building Materials: The Future of Construction
+              </h3>
+              <p class="text-md text-gray-400">
+                Explore Eco-friendly materials that don't compromise on quality
+                or durablity.
+              </p>
+              <a href="#" class="mt-3 text-[#101B32] hover:underline">
+                Read More <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="bg-white w-[400px] border rounded-lg flex flex-col relative shadow-sm hover:shadow-md transition"
+          >
+            <div>
+              <div class="relative">
+                <img
+                  src="Images/industry insights/image 3.png"
+                  alt="Product Image"
+                  class="mb-3 object-contain"
+                />
+                <div class="absolute inset-0 bg-[#000]/30"></div>
+              </div>
+            </div>
+            <div class="p-4 flex flex-col">
+              <p class="text-gray-400 font-semibold">
+                <i class="fa-solid fa-calendar-days mr-3"></i>March 8,2024
+              </p>
+              <h3 class="text-base font-semibold">
+                Saftey First: Complete Guide to Workplace Protection
+              </h3>
+              <p class="text-md text-gray-400">
+                Essential safety equipment and best practices for construction
+                sites.
+              </p>
+              <a href="#" class="mt-3 text-[#101B32] hover:underline">
+                Read More <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b1a36] text-gray-300 pt-16 pb-4 rounded-t-[50px]">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-12"
+      >
+        <!-- Left Section -->
+        <div class="space-y-4 md:col-span-2 lg:col-span-2">
+          <img
+            src="Images/Logo/CLS White Logo.png"
+            alt="CLS Logo"
+            class="w-86"
+          />
+
+          <p class="text-sm leading-relaxed">
+            Leading supplier of professional PPE and safety equipment for
+            industrial and corporate clients worldwide.
+          </p>
+
+          <!-- Contact Info -->
+          <div class="mt-6">
+            <h3 class="text-white font-semibold text-lg mb-6">
+              CONTACT INFORMATION
+            </h3>
+            <ul class="text-sm space-y-2">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone"></i> +1 (234) 567-890
+              </li>
+
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope"></i> info@cls.com
+              </li>
+
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-location-dot mt-1"></i>
+                <span>123 Industrial Ave, City, Country</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sponsors -->
+          <div class="mt-3">
+            <h3 class="text-white font-semibold text-lg mb-6">MAIN SPONSOR</h3>
+
+            <div class="flex items-center space-x-4">
+              <img
+                src="Images/Footer/image 1.png"
+                class="w-[79px] object-contain"
+              />
+              <img
+                src="Images/Footer/image 2.png"
+                class="w-[79px] object-contain"
+              />
+              <img
+                src="Images/Footer/image 3.png"
+                class="w-[79px] object-contain"
+              />
+            </div>
+
+            <div class="mt-6">
+              <img src="Images/Footer/Group.png" class="w-[406px]" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Links Section -->
+        <div class="md:col-span-2 grid grid-cols-2 items-start">
+          <!-- Company -->
+          <div>
+            <h3 class="text-white text-lg font-semibold mb-3">Company</h3>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:text-white">About Us</a></li>
+              <li><a href="#" class="hover:text-white">Our History</a></li>
+              <li><a href="#" class="hover:text-white">Sustainability</a></li>
+              <li><a href="#" class="hover:text-white">Careers</a></li>
+              <li>
+                <a href="#" class="hover:text-white">Become a Distributor</a>
+              </li>
+              <li><a href="#" class="hover:text-white">Our Partners</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h3 class="text-white text-lg font-semibold mb-3">Resources</h3>
+            <ul class="space-y-1 text-sm">
+              <li>
+                <a href="#" class="hover:text-white">Download Catalogues</a>
+              </li>
+              <li><a href="#" class="hover:text-white">Safety Standards</a></li>
+              <li><a href="#" class="hover:text-white">Certificates</a></li>
+              <li><a href="#" class="hover:text-white">Technical Sheets</a></li>
+              <li><a href="#" class="hover:text-white">Selection Guides</a></li>
+              <li><a href="#" class="hover:text-white">Blog & News</a></li>
+            </ul>
+          </div>
+
+          <!-- Products -->
+          <div>
+            <h3 class="text-white text-lg font-semibold mb-3">Products</h3>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:text-white">Safety Footwear</a></li>
+              <li><a href="#" class="hover:text-white">Safety Gloves</a></li>
+              <li><a href="#" class="hover:text-white">Workwear</a></li>
+              <li><a href="#" class="hover:text-white">PPE Equipment</a></li>
+              <li><a href="#" class="hover:text-white">Accessories</a></li>
+              <li><a href="#" class="hover:text-white">New Arrivals</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h3 class="text-white text-lg font-semibold mb-3">Support</h3>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:text-white">Contact Us</a></li>
+              <li><a href="#" class="hover:text-white">FAQ</a></li>
+              <li><a href="#" class="hover:text-white">Login / Register</a></li>
+              <li><a href="#" class="hover:text-white">My Wishlist</a></li>
+              <li><a href="#" class="hover:text-white">My Quotes</a></li>
+              <li><a href="#" class="hover:text-white">Shopping Info</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="md:col-span-2 lg:col-span-2">
+          <h3 class="text-white text-lg font-semibold mb-3">Newsletter</h3>
+          <p class="text-sm mb-4">
+            Get updates on new products and special offers.
+          </p>
+
+          <form class="flex-col space-y-3 w-full">
+            <input
+              type="email"
+              placeholder="Your Email"
+              class="w-full px-4 py-2 rounded text-gray-800 focus:outline-none"
+            />
+            <button
+              class="bg-red-600 w-full px-5 py-2 rounded text-white font-medium hover:bg-red-500 transition"
+            >
+              Subscribe
+            </button>
+          </form>
+
+          <!-- Social Icons -->
+          <div class="flex space-x-2 mt-5">
+            <a
+              href="#"
+              class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"
+              ><i class="fa-brands fa-facebook-f text-[#0b1a36]"></i
+            ></a>
+            <a
+              href="#"
+              class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"
+              ><i class="fa-brands fa-linkedin-in text-[#0b1a36]"></i
+            ></a>
+            <a
+              href="#"
+              class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"
+              ><i class="fa-brands fa-twitter text-[#0b1a36]"></i
+            ></a>
+            <a
+              href="#"
+              class="bg-white hover:bg-white/80 w-12 h-12 p-5 rounded-lg items-center justify-center flex"
+              ><i class="fa-brands fa-instagram text-[#0b1a36]"></i
+            ></a>
+          </div>
+
+          <!-- QUICK LINKS -->
+          <div class="mt-8">
+            <h3 class="text-white text-lg font-semibold mb-3">Quick Links</h3>
+
+            <div class="grid grid-cols-2 gap-8 items-start">
+              <div class="flex-col">
+                <div>
+                  <a href="#" class="text-white text-sm font-semibold underline"
+                    >Footwear</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Protective Footwear</li>
+                    <li>Womens Footwear</li>
+                    <li>ESD / HRO / Military</li>
+                    <li>Steel / Composite / Fiberglass</li>
+                    <li>PVC, PU & EVA Footwear</li>
+                    <li>Accessories</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="#" class="text-white text-sm font-semibold underline"
+                    >Gloves</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Protective & Multipurpose</li>
+                    <li>Anti-cut / Thermal / Chemical</li>
+                    <li>Leather / Welding</li>
+                    <li>Disposable / Antistatic</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="#" class="text-white text-sm font-semibold underline"
+                    >Clothing</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Workwear</li>
+                    <li>Fire Retardant</li>
+                    <li>Thermal / Outerwear</li>
+                    <li>Disposable Wear</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="flex-col">
+                <div>
+                  <a href="#" class="text-white text-sm font-semibold underline"
+                    >Signage & Safety</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Traffic Signs</li>
+                    <li>Fire Signs</li>
+                    <li>Information Signs</li>
+                    <li>Barriers & Cones</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="#" class="text-white text-sm font-semibold underline"
+                    >Protection Equipment</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Fall Protection</li>
+                    <li>Hearing Protection</li>
+                    <li>Eye & Face</li>
+                    <li>Respiratory</li>
+                    <li>Head Protection</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="#" class="text-white text-xs font-semibold underline"
+                    >Other Safety Products</a
+                  >
+                  <ul class="text-[0.45rem] list-disc ml-4">
+                    <li>Firefighting / First Aid</li>
+                    <li>Lifting Straps</li>
+                    <li>Eye Wash Stations</li>
+                    <li>DIY / Merchandising</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 mt-6 pt-4 px-6">
+        <div
+          class="max-w-7xl mx-auto flex flex-col sm:flex-row text-center sm:text-left items-center justify-between text-xs text-gray-400"
+        >
+          <p class="text-white mb-3 sm:mb-0">
+            © 2025 CLS.PT. All rights reserved. |
+            <a href="https://thesocialnexus.org/" class="text-white"
+              >Made by 🤍 TSN</a
+            >
+          </p>
+
+          <img
+            src="Images/Footer/bottom footer brands.png"
+            class="w-40 sm:w-auto"
+          />
+
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <a href="#" class="hover:text-white">Terms of Service</a>
+            <a href="#" class="hover:text-white">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script>
-      lucide.createIcons();
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const langBtn = document.getElementById("lang-btn");
+      const langMenu = document.getElementById("lang-menu");
+
+      menuBtn.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden")
+      );
+      langBtn.addEventListener("click", () =>
+        langMenu.classList.toggle("hidden")
+      );
+
+      document.addEventListener("click", (e) => {
+        if (!langBtn.contains(e.target) && !langMenu.contains(e.target))
+          langMenu.classList.add("hidden");
+      });
     </script>
   </body>
 </html>
